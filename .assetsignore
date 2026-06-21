@@ -1,0 +1,7 @@
+.git
+internal
+node_modules
+.DS_Store
+wrangler.jsonc
+.assetsignore
+.gitignore
