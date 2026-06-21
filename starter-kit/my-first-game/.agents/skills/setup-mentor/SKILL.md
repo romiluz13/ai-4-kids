@@ -1,56 +1,55 @@
 ---
 name: setup-mentor
 description: >-
-  השתמש כשהמשתמש שיבט את מאגר ai-4-kids ורוצה להתקין skills, לפתוח את ערכת
-  ההתחלה, או שואל איך מתחילים עם Cursor / Claude Code / Codex / Copilot / Gemini.
+  השתמש כשהמשתמש פתח את מאגר ai-4-kids ורוצה להתקין את המנטור, או שואל איך
+  מתחילים עם Cursor / Claude Code / Codex / Copilot / Gemini.
 compatibility: Cursor, Claude Code, Codex CLI, GitHub Copilot, Gemini CLI
 ---
 
 # Setup Mentor
 
-מכין את המאגר לעבודה. עברית פשוטה. צעד אחר צעד.
+מתקין את המנטור **פעם אחת** — ואז הוא זמין בכל פרויקט עתידי. עברית פשוטה, צעד-צעד.
 
-## שלב 0 — ודא skills
+## שלב 1 — התקנה גלובלית (מומלץ! פעם אחת בלבד)
 
-ה-skills כבר מותקנים מראש ב-`starter-kit/my-first-game/` בשלושה נתיבים
-(`.cursor/skills`, `.claude/skills`, `.agents/skills`). רק ודא שהם קיימים.
-
-אם חסרים — העתק מ-`skills/` לנתיב של הכלי:
-
-| כלי | נתיב |
-|-----|------|
-| Cursor | `.cursor/skills/` |
-| Claude Code | `.claude/skills/` |
-| Codex / Copilot / Gemini | `.agents/skills/` |
+העתק את כל ה-skills לתיקיית ה-skills **הגלובלית** של המחשב. ככה המנטור
+יהיה בכל פרויקט חדש — בלי להעתיק שוב את המאגר.
 
 ```bash
-KIT="starter-kit/my-first-game"
-for agent in .cursor .claude .agents; do
-  mkdir -p "$KIT/$agent/skills"
-  cp -r skills/*/ "$KIT/$agent/skills/" 2>/dev/null || true
+for d in ~/.cursor/skills ~/.claude/skills ~/.agents/skills; do
+  mkdir -p "$d"
+  cp -r skills/*/ "$d/"
 done
 ```
 
-## שלב 1 — פתח פרויקט
+- `~/.cursor/skills/` → Cursor
+- `~/.claude/skills/` → Claude Code
+- `~/.agents/skills/` → Codex, Copilot, Gemini
 
-**Open Folder** על `starter-kit/my-first-game` — לא קובץ בודד.
+הסבר לילד: "התקנו את המנטור על המחשב. עכשיו בכל פרויקט חדש הוא כבר שם."
 
-## שלב 2 — קרא הוראות
+## שלב 2 — הפרויקט הראשון
 
-קרא `AGENTS.md` בשורש המאגר (מגדיר את רמות המנטור וכללי ההדרכה).
+**Open Folder** על `starter-kit/my-first-game` (כבר מוכן עם הכול) ובנו שם.
+
+לפרויקט חדש בעתיד: פותחים **תיקייה ריקה חדשה** — המנטור כבר זמין (גלובלי).
 
 ## שלב 3 — בדיקה
 
-1. הקובץ בפרויקט נפתח בדפדפן
-2. Skills מופיעים (Cursor: Settings → Rules; Claude: `/skills`)
-3. הסבר לילד: יש לך מנטור שמעלה אותך מרמה 1 (מגלה) עד רמה 5 (גיבור)
+- Cursor: Settings → Rules → רואים את ה-skills
+- Claude Code: `/skills`
+- הסבר לילד את 5 הרמות: מגלה → בונה → חוקר → ארכיטקט → גיבור
 
 ## שלב 4 — התחלה
 
-הפעל `kid-brainstorm` — "מה היית רוצה לבנות היום — משחק או אפליקציה?" **בלי קוד עדיין.**
+הפעל `kid-brainstorm` — "מה היית רוצה לבנות — משחק או אפליקציה?" **בלי קוד עדיין.**
+
+## חלופה — פרויקט בודד בלבד
+
+אם רוצים רק לפרויקט הזה (לא גלובלי): העתק `skills/*` ל-`.cursor/skills/`
+(או `.claude/skills/` · `.agents/skills/`) בתוך תיקיית הפרויקט.
 
 ## הפניות
 
 - `reference/mentor-levels.html`
 - `reference/the-full-journey.html`
-- `README.md`
