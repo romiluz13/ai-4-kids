@@ -8,6 +8,7 @@
     ['reference/the-full-journey.html', 'המסע'],
     ['reference/mentor-levels.html', 'מאפס לגיבור'],
     ['reference/how-to-prompt.html', 'פרומפט'],
+    ['reference/find-help.html', 'מחקר'],
     ['reference/choose-your-agent.html', 'סוכנים'],
     ['lessons/0001-ai-is-your-copilot.html', 'שיעורים'],
     ['reference/glossary.html', 'מילון']
