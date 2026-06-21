@@ -5,3 +5,6 @@ node_modules
 wrangler.jsonc
 .assetsignore
 .gitignore
+README.md
+AGENTS.md
+CLAUDE.md

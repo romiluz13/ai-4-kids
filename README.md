@@ -55,17 +55,15 @@
 | 4 ארכיטקט | מתכננים פיצ'רים מראש |
 | 5 גיבור | בונים לבד — כל אפליקציה, וגם skills משלכם |
 
-מדריך: [`reference/mentor-levels.html`](reference/mentor-levels.html)
+→ [מאפס לגיבור — 5 הרמות](reference/mentor-levels.html)
 
 ---
 
 ## התהליך — 7 שלבים
 
-```
-רעיון → תכנון → מפרט → צעדים → בנייה → בדיקה → שיפור
-```
+**רעיון → תכנון → מפרט → צעדים → בנייה → בדיקה → שיפור**
 
-מדריך מלא: [`reference/the-full-journey.html`](reference/the-full-journey.html)
+→ [המסע המלא — 7 השלבים](reference/the-full-journey.html)
 
 ---
 
@@ -77,7 +75,7 @@
 - **תיעוד (Documentation)** — מדריך ההפעלה של כלי (README · Getting Started)
 - **קוד פתוח ב-GitHub** — מישהו כבר עשה חצי מהעבודה; המנטור ימצא בשבילכם
 
-מדריך: [`reference/find-help.html`](reference/find-help.html) · Skill: `find-help`
+→ [מחקר, תיעוד וקוד פתוח](reference/find-help.html) · Skill: `find-help`
 
 ---
 
@@ -124,7 +122,7 @@ ai-4-kids/
 ## עובד עם כל סוכן קוד
 
 Cursor · Claude Code · Codex · GitHub Copilot · Gemini CLI — אותו מאגר, אותם skills.
-מדריך התקנה: [`reference/choose-your-agent.html`](reference/choose-your-agent.html)
+→ [בחרו סוכן ואיך מתקינים](reference/choose-your-agent.html)
 
 > הורים: התקינו סוכן קוד אחד יחד עם הילד/ה. אתם לא צריכים להבין קוד — המנטור עושה את השאר.
 

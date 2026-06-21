@@ -33,6 +33,6 @@
 
 ## עוד חומרים
 
-- [`../../reference/mentor-levels.html`](../../reference/mentor-levels.html)
-- [`../../reference/the-full-journey.html`](../../reference/the-full-journey.html)
-- [`../../skills/README.md`](../../skills/README.md)
+- [מאפס לגיבור — 5 הרמות](../../reference/mentor-levels.html)
+- [המסע המלא — 7 השלבים](../../reference/the-full-journey.html)
+- [רשימת ה-Skills](../../skills/README.md)
