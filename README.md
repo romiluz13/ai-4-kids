@@ -2,7 +2,9 @@
 
 **גילאים 11–13 · עברית · בלי ניסיון בתכנות**
 
-🌐 **האתר החי:** [ai-4-kids.rom-88f.workers.dev](https://ai-4-kids.rom-88f.workers.dev)
+🌐 **האתר החי (כל המדריכים):** [ai-4-kids.rom-88f.workers.dev](https://ai-4-kids.rom-88f.workers.dev)
+
+**התחילו כאן:** [סקירה — בונים עם AI](https://ai-4-kids.rom-88f.workers.dev/presentation/class-presentation.html)
 
 ## הרעיון בקצרה
 
@@ -55,7 +57,7 @@
 | 4 ארכיטקט | מתכננים פיצ'רים מראש |
 | 5 גיבור | בונים לבד — כל אפליקציה, וגם skills משלכם |
 
-→ [מאפס לגיבור — 5 הרמות](reference/mentor-levels.html)
+→ [מאפס לגיבור — 5 הרמות](https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html)
 
 ---
 
@@ -63,7 +65,7 @@
 
 **רעיון → תכנון → מפרט → צעדים → בנייה → בדיקה → שיפור**
 
-→ [המסע המלא — 7 השלבים](reference/the-full-journey.html)
+→ [המסע המלא — 7 השלבים](https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html)
 
 ---
 
@@ -75,7 +77,7 @@
 - **תיעוד (Documentation)** — מדריך ההפעלה של כלי (README · Getting Started)
 - **קוד פתוח ב-GitHub** — מישהו כבר עשה חצי מהעבודה; המנטור ימצא בשבילכם
 
-→ [מחקר, תיעוד וקוד פתוח](reference/find-help.html) · Skill: `find-help`
+→ [מחקר, תיעוד וקוד פתוח](https://ai-4-kids.rom-88f.workers.dev/reference/find-help.html) · Skill: `find-help`
 
 ---
 
@@ -97,10 +99,24 @@ ai-4-kids/
 │   ├── game.html
 │   ├── templates/SPEC.md · TASKS.md
 │   └── .cursor / .claude / .agents  (skills מותקנים)
-├── reference/           ← מדריכים בעברית
+├── reference/           ← מדריכים בעברית (באתר החי ↑)
 ├── presentation/        ← סקירה כללית
 └── lessons/             ← שיעורים
 ```
+
+---
+
+## מדריכים באתר (לא ב-GitHub)
+
+| מדריך | קישור |
+|-------|--------|
+| סקירה — התחלה | [פתחו](https://ai-4-kids.rom-88f.workers.dev/presentation/class-presentation.html) |
+| 7 שלבים | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html) |
+| 5 רמות מנטור | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html) |
+| איך כותבים מפרט | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/how-to-prompt.html) |
+| מחקר ותיעוד | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/find-help.html) |
+| בחרו סוכן | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/choose-your-agent.html) |
+| כרטיס המשך | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/survival-card.html) |
 
 ---
 
@@ -122,7 +138,7 @@ ai-4-kids/
 ## עובד עם כל סוכן קוד
 
 Cursor · Claude Code · Codex · GitHub Copilot · Gemini CLI — אותו מאגר, אותם skills.
-→ [בחרו סוכן ואיך מתקינים](reference/choose-your-agent.html)
+→ [בחרו סוכן ואיך מתקינים](https://ai-4-kids.rom-88f.workers.dev/reference/choose-your-agent.html)
 
 > הורים: התקינו סוכן קוד אחד יחד עם הילד/ה. אתם לא צריכים להבין קוד — המנטור עושה את השאר.
 

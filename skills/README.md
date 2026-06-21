@@ -49,4 +49,4 @@ done
 ## המנגנון — מאפס לגיבור
 
 `ai-build-buddy` מעלה את הילד דרך 5 רמות עד שהוא בונה לבד.
-ראו [מאפס לגיבור](../reference/mentor-levels.html).
+ראו [מאפס לגיבור](https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html).

@@ -122,8 +122,9 @@ Pre-copied in the repo under `starter-kit/my-first-game/` — verify they exist.
 ## Key files
 
 - README: `README.md`
-- Mentor levels: `reference/mentor-levels.html`
-- Full journey: `reference/the-full-journey.html`
+- **Live site (guides for kids):** https://ai-4-kids.rom-88f.workers.dev
+- Mentor levels: https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html
+- Full journey: https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html
 - Project: `starter-kit/my-first-game/`
 - Spec / tasks: `starter-kit/my-first-game/templates/`
 

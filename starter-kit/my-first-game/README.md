@@ -33,6 +33,6 @@
 
 ## עוד חומרים
 
-- [מאפס לגיבור — 5 הרמות](../../reference/mentor-levels.html)
-- [המסע המלא — 7 השלבים](../../reference/the-full-journey.html)
+- [מאפס לגיבור — 5 הרמות](https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html)
+- [המסע המלא — 7 השלבים](https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html)
 - [רשימת ה-Skills](../../skills/README.md)

@@ -49,7 +49,7 @@ done
 אם רוצים רק לפרויקט הזה (לא גלובלי): העתק `skills/*` ל-`.cursor/skills/`
 (או `.claude/skills/` · `.agents/skills/`) בתוך תיקיית הפרויקט.
 
-## הפניות (פתחו בדפדפן)
+## הפניות (פתחו בדפדפן — באתר החי)
 
-- **מאפס לגיבור** — 5 רמות: `reference/mentor-levels.html`
-- **המסע המלא** — 7 שלבים: `reference/the-full-journey.html`
+- **מאפס לגיבור** — 5 רמות: https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html
+- **המסע המלא** — 7 שלבים: https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html
