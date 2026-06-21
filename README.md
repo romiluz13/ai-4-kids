@@ -2,6 +2,8 @@
 
 **גילאים 11–13 · עברית · בלי ניסיון בתכנות**
 
+🌐 **האתר החי:** [ai-4-kids.rom-88f.workers.dev](https://ai-4-kids.rom-88f.workers.dev)
+
 ## הרעיון בקצרה
 
 אתם לא צריכים לדעת קוד. אתם צריכים **סוכן קוד** (Cursor, Claude Code, Codex, Copilot, Gemini…) ואת **המאגר הזה**.
@@ -142,4 +144,5 @@ Cursor · Claude Code · Codex · GitHub Copilot · Gemini CLI — אותו מא
 
 חומרי לימוד — שימוש חופשי ללמידה. שיתוף עם קישור למאגר.
 
+**אתר חי:** [ai-4-kids.rom-88f.workers.dev](https://ai-4-kids.rom-88f.workers.dev)
 **מאגר:** [github.com/romiluz13/ai-4-kids](https://github.com/romiluz13/ai-4-kids)
