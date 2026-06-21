@@ -1,36 +1,38 @@
-# ערכת התחלה — לשימוש **בבית**
+# ערכת ההתחלה שלכם
 
-אחרי שהתקנתם סוכן קוד (Cursor / Claude Code / Codex) עם הורים.
+הפרויקט שבו תבנו — משחק או אפליקציה — עם המנטור.
 
 ## הדרך הקלה
 
 פתחו את **שורש המאגר** בסוכן וכתבו:
 
 ```
-הפעל את skill setup-summer-school והתקן לי את ערכת my-first-game
+קרא AGENTS.md והפעל setup-mentor. דבר בעברית פשוטה.
 ```
 
 ## ידנית
 
-1. התקינו סוכן קוד
+1. התקינו סוכן קוד (עם הורים)
 2. **Open Folder** → בחרו את התיקייה `my-first-game` (לא קובץ בודד)
-3. מצב **Agent** → `/ai-build-buddy` או התחילו לבנות
+3. `/ai-build-buddy` או פשוט ספרו למנטור מה בא לכם לבנות
 
 ## מה בפנים
 
 | קובץ / תיקייה | תפקיד |
 |---------------|--------|
-| `game.html` | המשחק — נפתח בדפדפן |
-| `.cursor/skills/` | הוראות לסוכן (ai-build-buddy ועוד) |
+| `game.html` | הפרויקט — נפתח בדפדפן (משחק או אפליקציה) |
+| `templates/SPEC.md` | מפרט — מה בונים |
+| `templates/TASKS.md` | משימות קטנות |
+| `.cursor / .claude / .agents` | המנטור (skills) מותקן |
 
-## לפני כן
+## התהליך
 
-בשיעור ראיתם הדגמה על המסך. עכשיו אתם עושים את אותה לולאה:
+**רעיון → תכנון → מפרט → צעדים → בנייה → בדיקה → שיפור**
 
-**תאר → למד/בנה → בדוק → תקן → שפר**
+המנטור מעלה אתכם מרמה 1 (מגלה) עד רמה 5 (גיבור).
 
 ## עוד חומרים
 
-- [`../../reference/survival-card.html`](../../reference/survival-card.html)
-- [`../../reference/must-have-checklist.html`](../../reference/must-have-checklist.html)
+- [`../../reference/mentor-levels.html`](../../reference/mentor-levels.html)
+- [`../../reference/the-full-journey.html`](../../reference/the-full-journey.html)
 - [`../../skills/README.md`](../../skills/README.md)
