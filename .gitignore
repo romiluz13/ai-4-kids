@@ -1,0 +1,9 @@
+# Teacher-only — stays on Rom's machine, not pushed to students
+/internal/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>בונה עם סוכני קוד — שיעור 90 דקות</title>
+  <link rel="stylesheet" href="../assets/lesson.css">
+  <style>
+    section { margin: 2.5rem 0; padding-top: 1rem; border-top: 2px solid var(--rule); }
+    section:first-of-type { border-top: none; }
+    .step-row { display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin:1rem 0; font-weight:600; font-size:0.9rem; }
+    .step-row span { background:var(--accent-soft); padding:0.35rem 0.65rem; border-radius:999px; }
+    .you { background:#e8f5e9; border:1px solid #81c784; border-radius:var(--radius); padding:0.75rem 1rem; margin:0.5rem 0; }
+    .them { background:#e3f2fd; border:1px solid #64b5f6; border-radius:var(--radius); padding:0.75rem 1rem; margin:0.5rem 0; }
+    nav.toc { background:#fff; border:1px solid var(--rule); border-radius:var(--radius); padding:1rem; margin:1rem 0; }
+    nav.toc a { display:block; padding:0.25rem 0; }
+  </style>
+</head>
+<body>
+
+<h1>בונה עם סוכני קוד</h1>
+<p class="meta">90 דקות · גילאי 11–13 · עברית</p>
+
+<nav class="toc">
+  <strong>תוכן העניינים</strong>
+  <a href="#today">איך עובדים היום</a>
+  <a href="#agents">מה זה סוכן קוד</a>
+  <a href="#coding">יסודות קוד (בקצרה)</a>
+  <a href="#process">התהליך — 7 שלבים</a>
+  <a href="#skills">Skills</a>
+  <a href="#live">מה נבנה ביחד על המסך</a>
+  <a href="#your-pc">מה אתם עושים על המחשב שלכם</a>
+  <a href="#home">מה תקבלו לבית</a>
+</nav>
+
+<section id="today">
+<h2>איך עובדים היום</h2>
+<div class="card highlight">
+  <div class="you"><strong>המורה</strong> — מחשב + מסך גדול + סוכן קוד (Cursor / Claude Code / Codex / ועוד)</div>
+  <div class="them"><strong>אתם</strong> — מחשב עם אינטרנט. בכיתה <em>אין</em> סוכן קוד אצלכם — וזה בסדר.</div>
+  <p><strong>בבית</strong> — עם הורים: תשבטו את המאגר ותתחילו עם סוכן אמיתי.</p>
+</div>
+</section>
+
+<section id="agents">
+<h2>מה זה סוכן קוד?</h2>
+<p class="lead"><strong>סוכן קוד</strong> = AI שמחובר ל<strong>תיקיית פרויקט</strong> על המחשב.</p>
+<ul>
+  <li>קורא וכותב <strong>קבצים</strong></li>
+  <li>מסביר, מחפש בפרויקט, לפעמים ברשת</li>
+  <li>Cursor · Claude Code · Codex · Copilot — <strong>אותו רעיון</strong>, אפליקציות שונות</li>
+</ul>
+<p>זה <strong>לא</strong> צ'אט רגיל. הצ'אט מדבר. הסוכן <strong>בונה</strong> בתיקייה.</p>
+<div class="quiz" data-quiz data-correct="1"
+     data-ok="נכון — אתם מחליטים מה לבנות."
+     data-no="הסוכן מחכה להוראות שלכם.">
+  <p class="quiz-question">מי מחליט מה לבנות?</p>
+  <div class="quiz-options">
+    <button class="quiz-option" type="button">הסוכן תמיד לבד</button>
+    <button class="quiz-option" type="button">אתם — הסוכן עוזר</button>
+    <button class="quiz-option" type="button">המחשב לבד</button>
+  </div>
+  <div class="quiz-feedback"></div>
+</div>
+</section>
+
+<section id="coding">
+<h2>יסודות קוד — מה חייבים להבין</h2>
+<div class="card">
+  <p><strong>קובץ</strong> — משהו שנשמר (<code>game.html</code>)</p>
+  <p><strong>תיקייה</strong> — מארגנת קבצים</p>
+  <p><strong>פרויקט</strong> = תיקייה אחת</p>
+  <p><strong>דפדפן</strong> — שם רואים ובודקים משחק</p>
+  <p><strong>באג</strong> — משהו שלא עובד. נורמלי.</p>
+  <p><strong>Open Folder</strong> — פותחים את תיקיית הפרויקט בסוכן, לא קובץ בודד</p>
+</div>
+</section>
+
+<section id="process">
+<h2>התהליך — איך מקצוענים עובדים עם AI</h2>
+<p>לא קופצים ישר לקוד. יש <strong>שבעה שלבים</strong>:</p>
+<div class="step-row">
+  <span>1 רעיון</span><span>2 תכנון</span><span>3 מפרט</span><span>4 צעדים</span>
+  <span>5 בנייה</span><span>6 בדיקה</span><span>7 שיפור</span>
+</div>
+<ol>
+  <li><strong>רעיון</strong> — 3 רעיונות, בוחרים אחד. <em>בלי קוד.</em></li>
+  <li><strong>תכנון</strong> — מי משחק? מה קורה כשמנצחים?</li>
+  <li><strong>מפרט</strong> — "זה משחק שבו ___" + מה בודקים בדפדפן</li>
+  <li><strong>צעדים</strong> — 2–4 משימות קטנות, אחת בכל פעם</li>
+  <li><strong>בנייה</strong> — הסוכן משנה קבצים (על המסך הגדול היום)</li>
+  <li><strong>בדיקה</strong> — פותחים בדפדפן. <strong>אתם</strong> הבוס — AI טועה לפעמים</li>
+  <li><strong>שיפור</strong> — "קורה X, רציתי Y" — תיקון אחד</li>
+</ol>
+<h3>מצבי סוכן (שמות שונים, אותו רעיון)</h3>
+<ul>
+  <li><strong>Ask</strong> — לומדים, בלי לשנות קבצים (רעיון, תכנון)</li>
+  <li><strong>Plan</strong> — מתכננים לפני בנייה</li>
+  <li><strong>Agent</strong> — בונה</li>
+  <li><strong>Debug</strong> — מוצא באגים</li>
+</ul>
+</section>
+
+<section id="skills">
+<h2>Skills — הוראות לסוכן</h2>
+<p><strong>Skill</strong> = קובץ <code>SKILL.md</code> שמלמד את <em>הסוכן</em> איך לעזור לכם.</p>
+<p>זה <strong>לא</strong> המיומנות שלכם. המיומנות שלכם = לחשוב, לבדוק, לשאול.</p>
+<div class="card">
+  <p>דוגמה: <code>ai-build-buddy</code> — דבר בעברית פשוטה, שינוי אחד בכל פעם</p>
+  <p>דוגמה: <code>kid-brainstorm</code> — רעיונות לפני קוד</p>
+  <p>דוגמה: <code>setup-summer-school</code> — מתקין הכול אחרי ששבטים את המאגר</p>
+</div>
+<p>במאגר יש Skills מוכנים — בבית הסוכן שלכם יתקין אותם.</p>
+</section>
+
+<section id="live">
+<h2>מה נבנה ביחד — על המסך הגדול</h2>
+<ol>
+  <li>סיבוב רעיון — 3 רעיונות, אתם בוחרים</li>
+  <li>בונים <strong>מפרט</strong> ביחד (מטרה · תחום · בדיקה)</li>
+  <li>המורה מריץ סוכן → רואים קובץ משתנה → <strong>דפדפן</strong></li>
+  <li>מראים SKILL.md בתוך הפרויקט</li>
+  <li>אתם בוחרים <strong>תיקון אחד</strong> — שוב על המסך</li>
+</ol>
+</section>
+
+<section id="your-pc">
+<h2>מה אתם עושים על המחשב שלכם — היום</h2>
+<p>אין לכם סוכן בכיתה. אתם עושים את החלק <strong>שלכם</strong> בתהליך:</p>
+<div class="them">
+<ul>
+  <li><strong>רעיון</strong> — חפשו באינטרנט השראה למשחקים פשוטים</li>
+  <li><strong>מפרט</strong> — מלאו תבנית על הנייר / במסמך (המורה יחלק)</li>
+  <li><strong>הצבעה</strong> — איזה רעיון? איזה תיקון?</li>
+  <li><strong>בדיקה</strong> — כשהמשחק על המסך: "עובד? מה חסר?"</li>
+  <li><strong>גלישה במאגר</strong> — פתחו את GitHub — README, המסע המלא</li>
+</ul>
+</div>
+<p>בבית — אותו תהליך, וגם <strong>בנייה</strong> — עם סוכן על המחשב שלכם.</p>
+</section>
+
+<section id="home">
+<h2>מה תקבלו לבית — המאגר המושלם</h2>
+<div class="card highlight">
+  <p>מאגר GitHub אחד. שבט. פתח אותו בסוכן הקוד. כתוב:</p>
+  <pre style="direction:ltr;text-align:left;background:#1a1a2e;color:#a8dadc;padding:0.75rem;border-radius:6px;font-size:0.85rem;">קרא AGENTS.md והפעל setup-summer-school
+דבר איתי בעברית פשוטה</pre>
+  <p>בפנים: משחק התחלה · Skills · מדריכים · 7 שלבים</p>
+  <p>עובד ב-Cursor · Claude Code · Codex · Copilot</p>
+</div>
+<p>הסוכן יהיה <strong>המנטור</strong> שלכם. אתם תנהלו — הוא יבנה.</p>
+</section>
+
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

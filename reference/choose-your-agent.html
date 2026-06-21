@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>בחרו סוכן קוד — התקנה</title>
+  <link rel="stylesheet" href="../assets/lesson.css">
+  <style>
+    .agent { background:#fff; border:1px solid var(--rule); border-radius:var(--radius); padding:1rem; margin:1rem 0; }
+    .agent h2 { margin-top:0; color:var(--accent); }
+    code { direction:ltr; display:inline-block; }
+    pre { direction:ltr; text-align:left; background:#1a1a2e; color:#a8dadc; padding:0.75rem; border-radius:6px; font-size:0.82rem; }
+  </style>
+</head>
+<body>
+
+<h1>בחרו סוכן קוד</h1>
+<p class="meta">כולם עובדים עם אותו מאגר · אותם Skills · אותו תהליך</p>
+
+<p class="lead">
+  בשיעור ראיתם הדגמה. בבית — עם הורים — מתקינים <strong>אחד</strong> מהכלים האלה. כולם טובים להתחלה.
+</p>
+
+<div class="agent">
+  <h2>Cursor</h2>
+  <p>התקנה: <a href="https://cursor.com" target="_blank" rel="noopener">cursor.com</a></p>
+  <p><strong>Skills:</strong> <code>.cursor/skills/שם/SKILL.md</code></p>
+  <p><strong>פתיחה:</strong> File → Open Folder → <code>starter-kit/my-first-game</code></p>
+  <p><strong>מצבים:</strong> Ask · Plan · Agent · Debug</p>
+  <p><strong>הקשר לקובץ:</strong> <code>@game.html</code></p>
+</div>
+
+<div class="agent">
+  <h2>Claude Code</h2>
+  <p>התקנה: לפי הוראות Anthropic</p>
+  <p><strong>Skills:</strong> <code>.claude/skills/שם/SKILL.md</code></p>
+  <p><strong>הוראות קבועות:</strong> <code>CLAUDE.md</code> בשורש הפרויקט</p>
+  <p><strong>פתיחה:</strong> מתחילים מתוך תיקיית <code>my-first-game</code> בטרמינל</p>
+  <p><strong>תכנון:</strong> Plan mode לפני בנייה</p>
+</div>
+
+<div class="agent">
+  <h2>Codex (OpenAI)</h2>
+  <p>התקנה: לפי הוראות OpenAI</p>
+  <p><strong>Skills:</strong> <code>.agents/skills/שם/SKILL.md</code></p>
+  <p><strong>הוראות קבועות:</strong> <code>AGENTS.md</code></p>
+  <p><strong>הפעלת skill:</strong> <code>$setup-summer-school</code> או בשם בצ'אט</p>
+</div>
+
+<div class="agent">
+  <h2>GitHub Copilot</h2>
+  <p>התקנה: הרחבה ב-VS Code או Copilot CLI</p>
+  <p><strong>Skills:</strong> <code>.github/skills/</code> או <code>.agents/skills/</code></p>
+  <p><strong>הוראות:</strong> <code>AGENTS.md</code> + <code>.github/copilot-instructions.md</code></p>
+</div>
+
+<div class="agent">
+  <h2>Gemini CLI</h2>
+  <p><strong>Skills:</strong> <code>.gemini/skills/</code> או <code>.agents/skills/</code></p>
+  <p><strong>הוראות:</strong> <code>GEMINI.md</code></p>
+</div>
+
+<h2>נתיב אחיד (הכי פשוט)</h2>
+<p>המאגר מעתיק Skills לשלושה מקומות ב-<code>my-first-game</code>:</p>
+<pre>.cursor/skills/
+.claude/skills/
+.agents/skills/</pre>
+<p>הסוכן שלכם ימצא את שלו אוטומטית.</p>
+
+<h2>התקנה אוטומטית — תגידו לסוכן</h2>
+<div class="card highlight">
+  <p>1. שבטו את המאגר</p>
+  <p>2. פתחו את <strong>שורש המאגר</strong> בסוכן</p>
+  <p>3. כתבו:</p>
+  <pre>קרא את AGENTS.md והפעל skill setup-summer-school
+התקן את כל ה-skills ופתח את my-first-game</pre>
+</div>
+
+<p>
+  <a href="the-full-journey.html">המסע המלא — 7 שלבים</a> ·
+  <a href="../skills/README.md">Skills</a> ·
+  <a href="survival-card.html">כרטיס בית</a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>המסע המלא — בנייה עם סוכן קוד</title>
+  <link rel="stylesheet" href="../assets/lesson.css">
+  <style>
+    .step { border-right:4px solid var(--accent); padding:0.6rem 1rem; margin:0.75rem 0; background:#fff; border-radius:var(--radius); }
+    .step-num { font-size:2rem; font-weight:800; color:var(--accent); opacity:0.35; line-height:1; }
+    .mantra { font-size:1.1rem; font-weight:700; text-align:center; padding:1rem; background:var(--accent-soft); border-radius:var(--radius); margin:1.5rem 0; }
+    table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+    th, td { border:1px solid var(--rule); padding:0.45rem; text-align:right; }
+    th { background:var(--accent-soft); }
+  </style>
+</head>
+<body>
+
+<h1>המסע המלא</h1>
+<p class="meta">איך בונים עם סוכן קוד — שלב אחר שלב · Cursor · Claude Code · Codex · Copilot</p>
+
+<p class="lead">
+  סוכן קוד הוא שותף — לא קסם. יש <strong>תהליך</strong>. מקצוענים עובדים ככה: קודם חושבים, אחר כך כותבים מה לבנות, ורק אז בונים ובודקים.
+</p>
+
+<div class="mantra">רעיון → תכנון → מפרט → צעדים → בנייה → בדיקה → שיפור</div>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <h2>רעיון</h2>
+  <p>עדיין <strong>בלי קוד</strong>. מבקשים מהסוכן 3 רעיונות פשוטים — בוחרים אחד.</p>
+  <p><em>"תן לי 3 רעיונות למשחק פשוט — אל תכתוב קוד עדיין."</em></p>
+  <p>Skill: <code>kid-brainstorm</code></p>
+</div>
+
+<div class="step">
+  <div class="step-num">2</div>
+  <h2>תכנון</h2>
+  <p>שאלות קצרות: מי משחק? מה קורה כשמנצחים? מה <strong>לא</strong> רוצים?</p>
+  <p>מצב: <strong>Ask</strong> — הסוכן מסביר, לא משנה קבצים.</p>
+</div>
+
+<div class="step">
+  <div class="step-num">3</div>
+  <h2>מפרט (PRD קצר)</h2>
+  <p>הסכם לפני בנייה. לא מסמך ענק — משפט אחד + 4 חלקים:</p>
+  <ul>
+    <li><strong>מטרה</strong> — "זה משחק שבו ___"</li>
+    <li><strong>תחום</strong> — רק game.html, שינוי אחד</li>
+    <li><strong>הקשר</strong> — איזה קובץ</li>
+    <li><strong>בדיקה</strong> — מה רואים בדפדפן</li>
+  </ul>
+  <p>קובץ: <code>templates/SPEC.md</code> · Skill: <code>kid-prompt-coach</code></p>
+  <p>→ <a href="how-to-prompt.html">מדריך פרומפט</a></p>
+</div>
+
+<div class="step">
+  <div class="step-num">4</div>
+  <h2>צעדים קטנים (משימות)</h2>
+  <p>מפרקים ל-2–4 משימות. אחת בכל פעם.</p>
+  <p>דוגמה: (1) נחש על המסך (2) חצים מזיזים (3) תפוחים וניקוד</p>
+  <p>קובץ: <code>templates/TASKS.md</code> · מצב: <strong>Plan</strong> או Ask</p>
+</div>
+
+<div class="step">
+  <div class="step-num">5</div>
+  <h2>בנייה</h2>
+  <p>הסוכן משנה קבצים — <strong>משימה אחת</strong> מ-TASKS.</p>
+  <p>מצב: <strong>Agent</strong> · Skill: <code>ai-build-buddy</code></p>
+  <p>קוראים מה השתנה לפני שמאשרים.</p>
+</div>
+
+<div class="step">
+  <div class="step-num">6</div>
+  <h2>בדיקה</h2>
+  <p>פותחים <code>game.html</code> בדפדפן. בודקים את רשימת הבדיקה מהמפרט.</p>
+  <p><strong>אתם</strong> הבוס — AI טועה לפעמים.</p>
+</div>
+
+<div class="step">
+  <div class="step-num">7</div>
+  <h2>שיפור</h2>
+  <p>"קורה ___, רציתי ___" — תיקון <strong>אחד</strong>. שוב בדיקה. חוזרים עד שמרוצים.</p>
+</div>
+
+<h2>מצבים לפי כלי</h2>
+<table>
+  <tr><th>שלב</th><th>Cursor</th><th>Claude Code</th><th>Codex / Copilot</th></tr>
+  <tr><td>רעיון, תכנון, מפרט</td><td>Ask</td><td>Ask / צ'אט</td><td>Ask / ללא עריכה</td></tr>
+  <tr><td>צעדים</td><td>Plan</td><td>Plan (Shift+Tab)</td><td>תכנון בטקסט</td></tr>
+  <tr><td>בנייה</td><td>Agent</td><td>Agent</td><td>Agent / מימוש</td></tr>
+  <tr><td>באגים</td><td>Debug</td><td>Debug</td><td>תיאור הבעיה</td></tr>
+</table>
+
+<h2>התחלה מהמאגר</h2>
+<ol>
+  <li>שבטו את המאגר מ-GitHub</li>
+  <li>פתחו אותו בסוכן → "הפעל setup-summer-school והתקן הכול"</li>
+  <li>התחילו בשלב 1 — רעיון</li>
+</ol>
+
+<p>
+  <a href="choose-your-agent.html">בחרו סוכן</a> ·
+  <a href="must-have-checklist.html">רשימת חובה</a> ·
+  <a href="../skills/README.md">Skills</a> ·
+  <a href="../README.md">README</a>
+</p>
+
+</body>
+</html>
