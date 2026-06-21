@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>איך כותבים פרומפט לסוכן קוד</title>
+  <title>איך כותבים מפרט לסוכן קוד</title>
   <link rel="stylesheet" href="../assets/lesson.css">
   <style>
     .part { background:#fff; border:2px solid var(--accent); border-radius:var(--radius); padding:0.85rem 1rem; margin:0.65rem 0; }
     .part strong { color:var(--accent); }
-    .bad { border-color:#e76f51; background:#fff8f6; }
-    .good { border-color:#2a9d8f; background:#f6fffc; }
+    .bad { border-color:#bc4749; background:var(--warn-bg); }
+    .good { border-color:#2d6a4f; background:var(--success-bg); }
   </style>
 </head>
 <body>
 
-<h1>איך כותבים פרומפט</h1>
-<p class="meta">עובד ב-Cursor · Claude Code · Codex · כל סוכן קוד</p>
+<h1>איך כותבים מפרט</h1>
+<p class="meta">עובד בכל סוכן קוד — Cursor · Claude Code · Codex · Copilot · Gemini</p>
 
 <p class="lead">
-  מפרט קצר = הפרומפט שלכם <strong>לפני</strong> בנייה. קודם רעיון ותכנון — ראו <a href="the-full-journey.html">המסע המלא</a>.
+  מפרט = מה שאתם אומרים לסוכן <strong>לפני</strong> שהוא בונה. קודם רעיון ותכנון — ראו <a href="the-full-journey.html">המסע המלא</a>.
 </p>
 
-<h2>לפני הפרומפט</h2>
+<h2>לפני המפרט</h2>
 <div class="part">
-  <p><strong>רעיון:</strong> "תן 3 רעיונות למשחק — אל תכתוב קוד"</p>
-  <p><strong>תכנון:</strong> מי משחק? מה קורה כשמנצחים?</p>
+  <p><strong>רעיון:</strong> "תן 3 רעיונות — אל תכתוב קוד"</p>
+  <p><strong>תכנון:</strong> מי ישתמש? מה קורה כשמצליחים?</p>
 </div>
 
-<h2>מפרט = ארבעת החלקים</h2>
+<h2>מפרט טוב = שלושה חלקים</h2>
 
 <div class="part">
   <p><strong>1. מטרה</strong> — מה לבנות?</p>
@@ -35,30 +35,27 @@
 </div>
 
 <div class="part">
-  <p><strong>2. תחום</strong> — איפה עובדים? מה לא נוגעים?</p>
-  <p>"עדכן רק את <code>game.html</code>. בלי ספריות חיצוניות."</p>
-  <p>שינוי <strong>אחד</strong> בכל פעם — לא עשר בקשות בבת אחת.</p>
+  <p><strong>2. תחום</strong> — כמה לשנות?</p>
+  <p>שינוי <strong>אחד</strong> בכל פעם — לא עשר בקשות בבת אחת. "בלי ספריות חיצוניות."</p>
 </div>
 
 <div class="part">
-  <p><strong>3. הקשר</strong> — איזה קובץ</p>
-  <p>Cursor: <code>@game.html</code> · Claude Code / Codex / Copilot: "עדכן את game.html בפרויקט"</p>
+  <p><strong>3. בדיקה</strong> — איך יודעים שזה עובד?</p>
+  <p>"כשפותחים בדפדפן: הנחש זז, ניקוד למעלה, המשחק נגמר בפגיעה."</p>
 </div>
 
-<div class="part">
-  <p><strong>4. איך יודעים שסיימנו</strong> — בדיקה</p>
-  <p>"כשפותחים בדפדפן: הנחש זז, ניקוד למעלה, משחק נגמר בפגיעה."</p>
+<div class="card highlight">
+  <p><strong>לא צריך "לתייג" קבצים.</strong> הסוכן כבר רואה את הפרויקט שפתחתם — הוא יבחר את הקובץ הנכון לבד. פשוט תארו מה אתם רוצים.</p>
 </div>
 
-<h2>דוגמה שלמה (להדגמה בכיתה)</h2>
+<h2>דוגמה שלמה</h2>
 
 <div class="card good">
-<pre style="direction:ltr;text-align:left;white-space:pre-wrap;margin:0;font-size:0.88rem;">עדכן @game.html
-
-מטרה: משחק נחש. חצים מזיזים, תפוחים מוסיפים ניקוד, פגיעה בזנב = הפסד.
-תחום: רק game.html, בלי ספריות.
-בדיקה: פותחים בדפדפן — רואים נחש, ניקוד, משחק נגמר כשפוגעים בעצמך.
-הסבר בפשטות איך לבדוק.</pre>
+<pre style="white-space:pre-wrap;margin:0;">תבנה משחק נחש בפרויקט.
+מטרה: חצים מזיזים, תפוחים מוסיפים ניקוד, פגיעה בזנב = הפסד.
+תחום: שינוי אחד, בלי ספריות.
+בדיקה: בדפדפן רואים נחש, ניקוד, וסוף משחק כשפוגעים בעצמך.
+תסביר בפשטות איך לבדוק.</pre>
 </div>
 
 <h2>חלש מול חזק</h2>
@@ -69,22 +66,24 @@
 </div>
 
 <div class="part good">
-  <p><strong>חזק:</strong> ארבעת החלקים למעלה — הכיתה בונה ביחד, המורה מקליד על המסך.</p>
+  <p><strong>חזק:</strong> שלושת החלקים למעלה — ברור, אפשר לבדוק.</p>
 </div>
 
 <h2>משפטים שתמיד עובדים</h2>
 <ul>
-  <li>"זה משחק שבו ___"</li>
+  <li>"זה משחק/אפליקציה שבו ___"</li>
   <li>"תסביר בפשטות למה ___"</li>
   <li>"קורה ___, רציתי ___. תתקן רק את זה."</li>
+  <li>"תן לי רמז, אל תפתור בשבילי"</li>
   <li>"מה הצעד הקטן הבא?"</li>
 </ul>
 
 <p>
-  <a href="first-prompt-cards.html">כרטיסי פרומפט להדגמה</a> ·
-  <a href="must-have-checklist.html">רשימת חובה</a> ·
-  <a href="coding-agents-capabilities.html">יכולות הסוכן</a>
+  <a href="first-prompt-cards.html">רעיונות לפרויקט ראשון</a> ·
+  <a href="the-full-journey.html">המסע המלא</a> ·
+  <a href="mentor-levels.html">מאפס לגיבור</a>
 </p>
 
+<script src="../assets/site-nav.js"></script>
 </body>
 </html>

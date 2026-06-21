@@ -86,7 +86,7 @@ ai-4-kids/
 │   ├── templates/SPEC.md · TASKS.md
 │   └── .cursor / .claude / .agents  (skills מותקנים)
 ├── reference/           ← מדריכים בעברית
-├── presentation/        ← מצגת מהשיעור
+├── presentation/        ← סקירה כללית
 └── lessons/             ← שיעורים
 ```
 

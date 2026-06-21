@@ -142,6 +142,46 @@ pre {
   border-color: var(--accent);
 }
 
+/* Site navigation (injected by site-nav.js) */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.9rem;
+  background: rgba(250,249,247,.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid var(--accent);
+  margin: -2rem -1.25rem 1.75rem;
+  padding: 0.55rem 1.25rem;
+}
+.site-nav .brand {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 800;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.site-nav .brand::before { content: "✦ "; }
+.site-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.6rem;
+}
+.site-nav-links a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.88rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+.site-nav-links a:hover { background: var(--accent-soft); }
+.site-nav-links a.active { background: var(--accent); color: #fff; }
+
+@media print { .site-nav { display: none; } }
+
 /* Quiz widget */
 .quiz { margin: 1.5rem 0; }
 
