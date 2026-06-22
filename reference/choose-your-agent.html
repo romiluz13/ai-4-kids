@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>בחרו סוכן קוד — התקנה</title>
+  <title>בחרו סוכן קוד - התקנה</title>
   <link rel="stylesheet" href="../assets/lesson.css">
   <style>
-    .agent { background:#fff; border:1px solid var(--rule); border-radius:var(--radius); padding:1rem; margin:1rem 0; }
+    .agent { background:var(--surface); border:1px solid var(--rule); border-radius:var(--radius); padding:1rem; margin:1rem 0; }
     .agent h2 { margin-top:0; color:var(--accent); }
     code { direction:ltr; display:inline-block; }
-    pre { direction:ltr; text-align:left; background:#1a1a2e; color:#a8dadc; padding:0.75rem; border-radius:6px; font-size:0.82rem; }
+    pre { direction:ltr; text-align:left; font-size:0.82rem; }
   </style>
 </head>
 <body>
 
 <h1>בחרו סוכן קוד</h1>
-<p class="meta">כולם עובדים עם אותו מאגר · אותם Skills · אותו תהליך</p>
+<p class="meta">אותו מאגר · אותו תהליך · תמיכה שונה מעט בכל כלי</p>
 
 <p class="lead">
-  מתקינים <strong>אחד</strong> מהכלים האלה (עם הורים). כולם טובים להתחלה — אותו מאגר עובד בכולם.
+  מתקינים <strong>אחד</strong> מהכלים האלה עם הורים. מתחילים פשוט: פותחים תיקייה, קוראים <code>AGENTS.md</code>, ובונים שינוי אחד בכל פעם.
 </p>
 
 <div class="agent">
   <h2>Cursor</h2>
   <p>התקנה: <a href="https://cursor.com" target="_blank" rel="noopener">cursor.com</a></p>
-  <p><strong>Skills:</strong> <code>.cursor/skills/שם/SKILL.md</code></p>
+  <p><strong>Skills:</strong> <code>.cursor/skills/שם/SKILL.md</code> או <code>.agents/skills/שם/SKILL.md</code></p>
   <p><strong>פתיחה:</strong> File → Open Folder → <code>starter-kit/my-first-game</code></p>
   <p><strong>מצבים:</strong> Ask · Plan · Agent · Debug</p>
-  <p><strong>הקשר:</strong> פשוט תארו מה לבנות — לא צריך לתייג קבצים</p>
+  <p><strong>הקשר:</strong> פשוט תארו מה לבנות - לא צריך לתייג קבצים</p>
 </div>
 
 <div class="agent">
@@ -42,7 +42,7 @@
 <div class="agent">
   <h2>Codex (OpenAI)</h2>
   <p>התקנה: לפי הוראות OpenAI</p>
-  <p><strong>Skills:</strong> <code>.agents/skills/שם/SKILL.md</code></p>
+  <p><strong>Skills:</strong> <code>.agents/skills/שם/SKILL.md</code> בפרויקט, או <code>~/.codex/skills/שם/SKILL.md</code> במחשב</p>
   <p><strong>הוראות קבועות:</strong> <code>AGENTS.md</code></p>
   <p><strong>הפעלת skill:</strong> <code>$setup-mentor</code> או בשם בצ'אט</p>
 </div>
@@ -50,24 +50,24 @@
 <div class="agent">
   <h2>GitHub Copilot</h2>
   <p>התקנה: הרחבה ב-VS Code או Copilot CLI</p>
-  <p><strong>Skills:</strong> <code>.github/skills/</code> או <code>.agents/skills/</code></p>
-  <p><strong>הוראות:</strong> <code>AGENTS.md</code> + <code>.github/copilot-instructions.md</code></p>
+  <p><strong>הוראות:</strong> <code>AGENTS.md</code> בשורש המאגר</p>
+  <p><strong>חשוב:</strong> תמיכת Skills תלויה במשטח Copilot שבו משתמשים. אם לא עובד אוטומטית, פשוט מבקשים ממנו לקרוא את <code>AGENTS.md</code>.</p>
 </div>
 
 <div class="agent">
   <h2>Gemini CLI</h2>
-  <p><strong>Skills:</strong> <code>.gemini/skills/</code> או <code>.agents/skills/</code></p>
+  <p><strong>Skills:</strong> <code>.agents/skills/שם/SKILL.md</code> או <code>.gemini/skills/שם/SKILL.md</code></p>
   <p><strong>הוראות:</strong> <code>GEMINI.md</code></p>
 </div>
 
-<h2>נתיב אחיד (הכי פשוט)</h2>
-<p>המאגר מעתיק Skills לשלושה מקומות ב-<code>my-first-game</code>:</p>
+<h2>הכי פשוט</h2>
+<p>בתוך <code>my-first-game</code> כבר יש Skills בשלושה מקומות נפוצים:</p>
 <pre>.cursor/skills/
 .claude/skills/
 .agents/skills/</pre>
-<p>הסוכן שלכם ימצא את שלו אוטומטית.</p>
+<p>אם הכלי שלכם תומך ב-Skills, הוא ימצא אותם. אם לא, <code>AGENTS.md</code> עדיין נותן לו את כללי המנטור.</p>
 
-<h2>התקנה אוטומטית — תגידו לסוכן</h2>
+<h2>התקנה אוטומטית</h2>
 <div class="card highlight">
   <p>1. שבטו את המאגר</p>
   <p>2. פתחו את <strong>שורש המאגר</strong> בסוכן</p>
@@ -75,12 +75,6 @@
   <pre>קרא את AGENTS.md והפעל skill setup-mentor
 התקן את כל ה-skills ופתח את my-first-game</pre>
 </div>
-
-<p>
-  <a href="the-full-journey.html">המסע המלא — 7 שלבים</a> ·
-  <a href="../skills/README.md">Skills</a> ·
-  <a href="survival-card.html">כרטיס בית</a>
-</p>
 
 <script src="../assets/site-nav.js"></script>
 </body>

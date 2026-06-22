@@ -1,162 +1,97 @@
-# בונה עם AI — מאגר לילדים
+# בונה עם AI - ערכת התחלה לילדים
 
-**גילאים 11–13 · עברית · בלי ניסיון בתכנות**
+עברית. גילאי 11-13. בלי ניסיון בתכנות.
 
-🌐 **האתר החי (כל המדריכים):** [ai-4-kids.rom-88f.workers.dev](https://ai-4-kids.rom-88f.workers.dev)
+אתר חי: [ai-4-kids.rom-88f.workers.dev](https://ai-4-kids.rom-88f.workers.dev)
 
-**התחילו כאן:** [סקירה — בונים עם AI](https://ai-4-kids.rom-88f.workers.dev/presentation/class-presentation.html)
+## מה זה
 
-## הרעיון בקצרה
+מאגר שמכין סוכן קוד להיות מנטור לילד.
 
-אתם לא צריכים לדעת קוד. אתם צריכים **סוכן קוד** (Cursor, Claude Code, Codex, Copilot, Gemini…) ואת **המאגר הזה**.
+המנטור לא רק כותב קוד. הוא שואל, מסביר, נותן רמזים, בונה שינוי אחד בכל פעם, ומבקש מהילד לבדוק בדפדפן.
 
-המאגר הופך את ה-AI ל**מנטור אישי** שמלמד אתכם בעברית — ולוקח אתכם **מאפס עד גיבור**: מהיום הראשון ועד שאתם בונים כל אפליקציה או משחק שתרצו, לבד.
+המטרה: ילד שמתחיל מאפס ומתקדם עד שהוא בונה משחקים ואפליקציות בעצמו.
 
-ה-AI לא רק כותב קוד. הוא **מסביר, מנחה, שואל, נותן רמזים, מתקן, ומלמד** — בקצב שלכם.
+## התחלה מהירה
 
----
+1. הורידו את המאגר מ-GitHub.
+2. פתחו אותו בסוכן קוד.
+3. כתבו לסוכן:
 
-## התחלה — 3 צעדים
-
-1. **הורידו את המאגר** — כפתור ירוק `Code` ב-GitHub → `Download ZIP` (או `git clone`)
-2. **פתחו אותו בסוכן הקוד** (Open Folder)
-3. **העתיקו לסוכן את המשפט הזה:**
-
-```
-קרא את AGENTS.md והפעל את ה-skill בשם setup-mentor.
-התקן הכול, פתח את starter-kit/my-first-game,
-ודבר איתי בעברית פשוטה כמו מנטור לילד בלי ניסיון בתכנות.
-מה היית מציע שאבנה — משחק או אפליקציה?
+```text
+קרא את AGENTS.md והפעל setup-mentor.
+דבר איתי בעברית פשוטה כמו מנטור לילד בלי ניסיון.
+מה כדאי שאבנה היום: משחק או אפליקציה?
 ```
 
-**זהו.** הסוכן יהפוך למנטור שלכם ויתחיל ללוות אתכם.
+בכיתה לא חייבים להתקין כלום. המורה יכול להציג את המצגת ולבנות חי על המסך.
 
----
+## חומרי שיעור
 
-## מתקינים פעם אחת — מנטור בכל פרויקט
+| למי | קישור |
+|-----|-------|
+| מורה בכיתה | [מצגת לכיתה](https://ai-4-kids.rom-88f.workers.dev/presentation/class-presentation.html) |
+| תלמידים בכיתה | [דף עבודה](https://ai-4-kids.rom-88f.workers.dev/presentation/class-handout.html) |
+| המשך בבית | [כרטיס המשך](https://ai-4-kids.rom-88f.workers.dev/reference/survival-card.html) |
 
-`setup-mentor` מתקין את המנטור **גלובלית** על המחשב. אחרי זה:
+## איך לומדים
 
-- **לא צריך** להוריד את המאגר שוב לכל פרויקט.
-- **כל פרויקט חדש** (כל תיקייה חדשה) — המנטור כבר שם.
-- רוצים לבנות משהו חדש? פותחים תיקייה ריקה ואומרים למנטור מה לבנות.
-
-המאגר הזה נשאר אצלכם בשביל הפרויקט הראשון (`my-first-game`) ובשביל המדריכים.
-
----
-
-## מאפס לגיבור — 5 רמות
-
-המנטור מעלה אתכם רמה אחרי רמה, עד שלא תצטרכו אותו:
-
-| רמה | אתם… |
-|-----|------|
-| 1 מגלה | בוחרים רעיון, המנטור בונה ומסביר הכול |
-| 2 בונה | כותבים מפרט, המנטור בונה לפיו |
-| 3 חוקר | מתקנים באגים עם רמזים, לא פתרונות |
-| 4 ארכיטקט | מתכננים פיצ'רים מראש |
-| 5 גיבור | בונים לבד — כל אפליקציה, וגם skills משלכם |
-
-→ [מאפס לגיבור — 5 הרמות](https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html)
-
----
-
-## התהליך — 7 שלבים
+התהליך חוזר בכל פרויקט:
 
 **רעיון → תכנון → מפרט → צעדים → בנייה → בדיקה → שיפור**
 
-→ [המסע המלא — 7 השלבים](https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html)
+המנטור מתחיל קרוב לילד, ואז נותן יותר עצמאות:
 
----
+1. מגלה: המנטור בונה ומסביר.
+2. בונה: הילד כותב מפרט קצר.
+3. חוקר: הילד מתקן עם רמזים.
+4. ארכיטקט: הילד מתכנן פיצ'רים.
+5. גיבור: הילד בונה לבד ומבקש עזרה כשצריך.
 
-## AI לא יודע הכול — וזה בסדר
+## מה יש במאגר
 
-ל-AI יש **תאריך עצירה**: הוא למד עד תאריך מסוים, והעולם ממשיך להשתנות. לכן לומדים גם:
-
-- **לחפש ברשת** — לבדוק מה עדכני (לא לסמוך בעיניים עצומות)
-- **תיעוד (Documentation)** — מדריך ההפעלה של כלי (README · Getting Started)
-- **קוד פתוח ב-GitHub** — מישהו כבר עשה חצי מהעבודה; המנטור ימצא בשבילכם
-
-→ [מחקר, תיעוד וקוד פתוח](https://ai-4-kids.rom-88f.workers.dev/reference/find-help.html) · Skill: `find-help`
-
----
-
-## בונים מה שרוצים
-
-לא רק משחקים. גם **כרטיסיות לימוד · מעקב הרגלים · חידון · מחשבון · טיימר · אפליקציית ציור · סיפור אינטראקטיבי**. מתחילים ממה שמעניין אתכם.
-
----
-
-## מבנה המאגר
-
-```
+```text
 ai-4-kids/
-├── README.md            ← אתם כאן
-├── AGENTS.md            ← המנטור קורא ראשון (רמות + כללים)
-├── CLAUDE.md            ← מפנה ל-AGENTS.md (ל-Claude Code)
-├── skills/              ← המנטור בפנים
-├── starter-kit/my-first-game/   ← הפרויקט שלכם
+├── AGENTS.md
+├── skills/
+├── starter-kit/my-first-game/
 │   ├── game.html
-│   ├── templates/SPEC.md · TASKS.md
-│   └── .cursor / .claude / .agents  (skills מותקנים)
-├── reference/           ← מדריכים בעברית (באתר החי ↑)
-├── presentation/        ← סקירה כללית
-└── lessons/             ← שיעורים
+│   ├── templates/SPEC.md
+│   ├── templates/TASKS.md
+│   ├── .cursor/skills/
+│   ├── .claude/skills/
+│   └── .agents/skills/
+├── presentation/
+├── reference/
+└── lessons/
 ```
 
----
-
-## מדריכים באתר (לא ב-GitHub)
-
-| מדריך | קישור |
-|-------|--------|
-| סקירה — התחלה | [פתחו](https://ai-4-kids.rom-88f.workers.dev/presentation/class-presentation.html) |
-| 7 שלבים | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html) |
-| 5 רמות מנטור | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html) |
-| איך כותבים מפרט | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/how-to-prompt.html) |
-| מחקר ותיעוד | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/find-help.html) |
-| בחרו סוכן | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/choose-your-agent.html) |
-| כרטיס המשך | [פתחו](https://ai-4-kids.rom-88f.workers.dev/reference/survival-card.html) |
-
----
-
-## Skills — המנטור בפנים
+## Skills
 
 | Skill | תפקיד |
 |-------|--------|
-| `setup-mentor` | מתקין הכול בפעם הראשונה |
-| `kid-brainstorm` | רעיונות — בלי קוד |
-| `kid-prompt-coach` | עוזר לבנות מפרט |
-| `kid-build-workflow` | זוכר את 7 השלבים |
-| `find-help` | מחקר, תיעוד וקוד פתוח כשצריך עזרה |
-| `ai-build-buddy` | מנטור מדורג בזמן בנייה |
+| `setup-mentor` | מתקין את המנטור |
+| `kid-brainstorm` | רעיונות בלי קוד |
+| `kid-prompt-coach` | מפרט קצר |
+| `kid-build-workflow` | 7 שלבי הבנייה |
+| `find-help` | תיעוד, רשת וקוד פתוח |
+| `ai-build-buddy` | מנטור בזמן בנייה |
 
-פרטים: [`skills/README.md`](skills/README.md)
+## תמיכת כלים
 
----
+המאגר משתמש בפורמט `SKILL.md`.
 
-## עובד עם כל סוכן קוד
+נבדק מול התיעוד העדכני: Cursor, Claude Code, Codex ו-Gemini CLI תומכים ב-Agent Skills במיקומים דומים. GitHub Copilot קורא `AGENTS.md`; תמיכת Skills תלויה במשטח שבו משתמשים.
 
-Cursor · Claude Code · Codex · GitHub Copilot · Gemini CLI — אותו מאגר, אותם skills.
-→ [בחרו סוכן ואיך מתקינים](https://ai-4-kids.rom-88f.workers.dev/reference/choose-your-agent.html)
+הכי פשוט: לפתוח את `starter-kit/my-first-game`. הוא כבר כולל Skills בשלושה נתיבים נפוצים.
 
-> הורים: התקינו סוכן קוד אחד יחד עם הילד/ה. אתם לא צריכים להבין קוד — המנטור עושה את השאר.
+## קישורים חשובים
 
----
-
-## משפטים שתמיד עובדים
-
-- "זה משחק/אפליקציה שבו ___"
-- "תסביר לי בפשטות למה ___"
-- "קורה ___, רציתי ___. תתקן רק את זה."
-- "תן לי רמז, אל תפתור בשבילי"
-- "תן לי 3 רעיונות — אל תכתוב קוד עדיין"
-
----
+- [המסע המלא](https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html)
+- [5 רמות המנטור](https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html)
+- [איך כותבים מפרט](https://ai-4-kids.rom-88f.workers.dev/reference/how-to-prompt.html)
+- [בחרו סוכן](https://ai-4-kids.rom-88f.workers.dev/reference/choose-your-agent.html)
 
 ## רישיון
 
-חומרי לימוד — שימוש חופשי ללמידה. שיתוף עם קישור למאגר.
-
-**אתר חי:** [ai-4-kids.rom-88f.workers.dev](https://ai-4-kids.rom-88f.workers.dev)
-**מאגר:** [github.com/romiluz13/ai-4-kids](https://github.com/romiluz13/ai-4-kids)
+חומרי לימוד לשימוש חופשי בלמידה. אם משתפים, צרפו קישור למאגר.

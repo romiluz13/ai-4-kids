@@ -6,7 +6,7 @@ description: >-
 compatibility: Cursor, Claude Code, Codex, GitHub Copilot, Gemini CLI
 ---
 
-# Kid Build Workflow — שבעת השלבים
+# Kid Build Workflow - שבעת השלבים
 
 תהליך מלא לבנייה עם סוכן קוד. **אל תדלג על שלבים.**
 
@@ -22,7 +22,7 @@ compatibility: Cursor, Claude Code, Codex, GitHub Copilot, Gemini CLI
 | 6 | בדיקה | פתיחה בדפדפן | הילד מאשר |
 | 7 | שיפור | תיקון אחד | חזרה ל-6 |
 
-## רמה 1 — ניצחון מהיר קודם
+## רמה 1 - ניצחון מהיר קודם
 
 אם הילד חדש לגמרי: הבא תוצאה לפעול על המסך מהר, ואז הסבר. אל תיתקע בתכנון ארוך.
 
@@ -35,7 +35,7 @@ compatibility: Cursor, Claude Code, Codex, GitHub Copilot, Gemini CLI
 
 ## אם הילד ממהר
 
-"אני מבין שבא לך לראות משהו מהר. נבחר רעיון בדקה — ואז בונים."
+"אני מבין שבא לך לראות משהו מהר. נבחר רעיון בדקה - ואז בונים."
 
 ## אחרי כל בנייה
 

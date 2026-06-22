@@ -3,46 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>בונה עם AI — מאגר לילדים</title>
+  <title>בונה עם AI - מאגר לילדים</title>
   <link rel="stylesheet" href="assets/lesson.css">
   <style>
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.75rem; margin:1.25rem 0; }
-    .grid a { display:block; background:#fff; border:1px solid var(--rule); border-radius:var(--radius); padding:1rem; text-decoration:none; color:inherit; }
-    .grid a:hover { border-color:var(--accent); }
-    .grid strong { color:var(--accent); display:block; margin-bottom:0.25rem; }
-    .start { background:var(--accent-soft); border-radius:var(--radius); padding:1rem 1.25rem; margin:1rem 0; }
-    code { direction:ltr; display:inline-block; }
+    body { max-width: 54rem; }
+    .home-hero {
+      min-height: calc(100vh - 8rem);
+      display: grid;
+      align-content: center;
+      gap: clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .home-hero h1 {
+      max-width: 12ch;
+      font-size: clamp(3.2rem, 11vw, 7.5rem);
+      line-height: 0.95;
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+    .home-hero .meta {
+      max-width: 34rem;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      margin: 0;
+    }
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.9rem;
+    }
+    .path-card {
+      display: grid;
+      gap: 0.6rem;
+      align-content: space-between;
+      min-height: 11rem;
+      color: inherit;
+      text-decoration: none;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 1.15rem;
+    }
+    .path-card:hover { border-color: var(--accent); }
+    .path-card strong {
+      color: var(--accent-ink);
+      font-size: 1.25rem;
+    }
+    .path-card span { color: var(--muted); }
+    .path-card.primary {
+      background: var(--accent);
+      color: var(--surface);
+      border-color: var(--accent);
+    }
+    .path-card.primary strong,
+    .path-card.primary span { color: var(--surface); }
+    .small-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
 
-<h1>בונה עם AI 🚀</h1>
-<p class="meta">מנטור אישי שמלמד אתכם לבנות כל אפליקציה או משחק — מאפס עד גיבור · גילאי 11–13</p>
+<main class="home-hero">
+  <div>
+    <h1>בונה עם AI</h1>
+    <p class="meta">ערכת התחלה לילדים: מנטור עברי, פרויקט ראשון, ודרך פשוטה לבנות משחקים ואפליקציות עם סוכן קוד.</p>
+  </div>
 
-<div class="start">
-  <p><strong>איך מתחילים (פעם אחת):</strong></p>
-  <ol>
-    <li>מתקינים סוכן קוד (Cursor / Claude Code / Codex / Copilot) עם הורים</li>
-    <li>מורידים את המאגר ופותחים אותו בסוכן</li>
-    <li>כותבים לסוכן: <code>קרא את AGENTS.md והפעל את ה-skill בשם setup-mentor</code></li>
-  </ol>
-  <p>מהיום — בכל פרויקט חדש המנטור כבר אצלכם.</p>
-</div>
+  <div class="path-grid" aria-label="אפשרויות התחלה">
+    <a class="path-card primary" href="presentation/class-presentation.html">
+      <strong>מצגת לכיתה</strong>
+      <span>זרימה אמיתית ל-90 דקות: רעיון, מפרט, בנייה חיה, בדיקה, המשך בבית.</span>
+      <b>פתחו מצגת</b>
+    </a>
+    <a class="path-card" href="presentation/class-handout.html">
+      <strong>דף עבודה לתלמידים</strong>
+      <span>התלמידים ממלאים רעיון, מפרט ותיקון אחד בזמן שהמורה מדגים.</span>
+      <b>פתחו דף עבודה</b>
+    </a>
+    <a class="path-card" href="reference/survival-card.html">
+      <strong>מתחילים בבית</strong>
+      <span>התקנה עם הורים, הורדת המאגר, והמשפט הראשון שאומרים לסוכן.</span>
+      <b>ראו הוראות</b>
+    </a>
+  </div>
 
-<p style="text-align:center;margin:1.5rem 0;">
-  <a href="presentation/class-presentation.html" style="display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:0.8rem 2rem;border-radius:var(--radius);font-size:1.1rem;">התחילו כאן ⟵</a>
-</p>
-
-<div class="grid">
-  <a href="presentation/class-presentation.html"><strong>סקירה</strong>כל הרעיון בעמוד אחד</a>
-  <a href="reference/the-full-journey.html"><strong>המסע המלא</strong>7 השלבים לבנייה</a>
-  <a href="reference/mentor-levels.html"><strong>מאפס לגיבור</strong>5 רמות המנטור</a>
-  <a href="reference/choose-your-agent.html"><strong>בחרו סוכן</strong>איזה כלי ואיך מתקינים</a>
-  <a href="reference/how-to-prompt.html"><strong>איך כותבים מפרט</strong>פרומפט טוב</a>
-  <a href="reference/survival-card.html"><strong>כרטיס המשך</strong>תזכורת מהירה</a>
-</div>
-
-<p>קוד המקור והורדה: <a href="https://github.com/romiluz13/ai-4-kids" target="_blank" rel="noopener">github.com/romiluz13/ai-4-kids</a></p>
+  <div>
+    <p><strong>המאגר:</strong> <a href="https://github.com/romiluz13/ai-4-kids" target="_blank" rel="noopener">github.com/romiluz13/ai-4-kids</a></p>
+    <div class="small-links">
+      <a href="reference/the-full-journey.html">7 השלבים</a>
+      <a href="reference/mentor-levels.html">5 רמות מנטור</a>
+      <a href="reference/choose-your-agent.html">בחרו סוכן</a>
+      <a href="reference/glossary.html">מילון</a>
+    </div>
+  </div>
+</main>
 
 <script src="assets/site-nav.js"></script>
 </body>

@@ -1,19 +1,24 @@
-/* Shared lesson stylesheet — RTL Hebrew, Tufte-inspired */
+/* Shared lesson stylesheet: RTL Hebrew, kid-friendly reading pages */
 
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&family=Rubik:wght@400;500;700&display=swap');
 
 :root {
-  --ink: #1a1a2e;
-  --muted: #5c5c7a;
-  --accent: #4361ee;
-  --accent-soft: #e8edff;
-  --success: #2d6a4f;
-  --success-bg: #d8f3dc;
-  --warn: #bc4749;
-  --warn-bg: #fde8e8;
-  --paper: #faf9f7;
-  --rule: #e0ddd6;
-  --radius: 10px;
+  --ink: oklch(22% 0.055 285);
+  --muted: oklch(45% 0.045 282);
+  --accent: oklch(55% 0.21 272);
+  --accent-ink: oklch(38% 0.18 272);
+  --accent-soft: oklch(95% 0.035 272);
+  --success: oklch(41% 0.11 158);
+  --success-bg: oklch(93% 0.05 151);
+  --warn: oklch(48% 0.14 24);
+  --warn-bg: oklch(94% 0.04 24);
+  --paper: oklch(97% 0.018 258);
+  --surface: oklch(99% 0.006 258);
+  --surface-strong: oklch(95% 0.018 258);
+  --rule: oklch(86% 0.024 258);
+  --code-bg: oklch(92% 0.018 258);
+  --code-ink: oklch(22% 0.055 285);
+  --radius: 8px;
 }
 
 * { box-sizing: border-box; }
@@ -42,7 +47,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   margin-top: 0;
   border-bottom: 3px solid var(--accent);
   padding-bottom: 0.5rem;
@@ -51,7 +56,7 @@ h1 {
 h2 {
   font-size: 1.35rem;
   margin-top: 2.5rem;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 h3 { font-size: 1.1rem; margin-top: 1.5rem; }
@@ -69,28 +74,30 @@ a:hover { text-decoration-thickness: 2px; }
 
 .lead {
   font-size: 1.15rem;
-  color: var(--muted);
-  border-right: 4px solid var(--accent);
-  padding-right: 1rem;
+  color: var(--ink);
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in oklch, var(--accent) 24%, var(--surface));
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
   margin: 1.5rem 0 2rem;
 }
 
 .card {
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   padding: 1.25rem 1.5rem;
   margin: 1.25rem 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  box-shadow: 0 1px 2px oklch(22% 0.055 285 / 0.04);
 }
 
 .card.highlight {
-  border-right: 4px solid var(--accent);
   background: var(--accent-soft);
+  border-color: color-mix(in oklch, var(--accent) 30%, var(--surface));
 }
 
-.card.success { border-right-color: var(--success); background: var(--success-bg); }
-.card.warn { border-right-color: var(--warn); background: var(--warn-bg); }
+.card.success { border-color: color-mix(in oklch, var(--success) 42%, var(--surface)); background: var(--success-bg); }
+.card.warn { border-color: color-mix(in oklch, var(--warn) 42%, var(--surface)); background: var(--warn-bg); }
 
 ol, ul { padding-right: 1.25rem; }
 li { margin: 0.4rem 0; }
@@ -98,7 +105,8 @@ li { margin: 0.4rem 0; }
 code, .mono {
   font-family: 'Rubik', monospace;
   font-size: 0.88em;
-  background: #eee;
+  background: var(--code-bg);
+  color: var(--code-ink);
   padding: 0.1em 0.35em;
   border-radius: 4px;
   direction: ltr;
@@ -106,8 +114,8 @@ code, .mono {
 }
 
 pre {
-  background: #1a1a2e;
-  color: #e8e8f0;
+  background: var(--ink);
+  color: oklch(94% 0.018 282);
   padding: 1rem 1.25rem;
   border-radius: var(--radius);
   overflow-x: auto;
@@ -129,7 +137,7 @@ pre {
 .nav-lessons a {
   display: inline-block;
   padding: 0.35rem 0.75rem;
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: 999px;
   font-size: 0.85rem;
@@ -138,7 +146,7 @@ pre {
 
 .nav-lessons a.current {
   background: var(--accent);
-  color: #fff;
+  color: var(--surface);
   border-color: var(--accent);
 }
 
@@ -174,7 +182,7 @@ pre {
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   padding: 0.7rem 1.1rem;
-  background: #fff;
+  background: var(--surface);
   color: var(--ink);
   max-width: 48%;
 }
@@ -184,11 +192,13 @@ pre {
   text-align: left;
   margin-inline-start: auto;
   background: var(--accent);
-  color: #fff;
+  color: var(--surface);
   border-color: var(--accent);
   font-weight: 700;
 }
 .seq-nav a.next small { color: #dbe4ff; }
+.seq-nav--single { justify-content: flex-start; }
+.seq-nav--single a { max-width: none; }
 @media print { .seq-nav { display: none; } }
 .site-nav .brand {
   font-family: 'Rubik', sans-serif;
@@ -197,21 +207,13 @@ pre {
   text-decoration: none;
   font-size: 1rem;
 }
-.site-nav .brand::before { content: "✦ "; }
-.site-nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem 0.6rem;
+.site-nav .brand::before { content: ""; }
+.site-nav-progress {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 600;
+  margin-inline-start: auto;
 }
-.site-nav-links a {
-  text-decoration: none;
-  color: var(--ink);
-  font-size: 0.88rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-}
-.site-nav-links a:hover { background: var(--accent-soft); }
-.site-nav-links a.active { background: var(--accent); color: #fff; }
 
 @media print { .site-nav { display: none; } }
 
@@ -236,7 +238,7 @@ pre {
   padding: 0.75rem 1rem;
   border: 2px solid var(--rule);
   border-radius: var(--radius);
-  background: #fff;
+  background: var(--surface);
   cursor: pointer;
   font-family: inherit;
   font-size: 1rem;
@@ -283,7 +285,7 @@ pre {
   margin-top: 0.75rem;
   padding: 0.6rem 1.25rem;
   background: var(--accent);
-  color: #fff;
+  color: var(--surface);
   border: none;
   border-radius: var(--radius);
   font-family: inherit;

@@ -6,7 +6,7 @@
   <title>יכולות סוכני קוד</title>
   <link rel="stylesheet" href="../assets/lesson.css">
   <style>
-    .cap { background:#fff; border:1px solid var(--rule); border-radius:var(--radius); padding:0.85rem 1rem; margin:0.65rem 0; }
+    .cap { background:var(--surface); border:1px solid var(--rule); border-radius:var(--radius); padding:0.85rem 1rem; margin:0.65rem 0; }
     .cap strong { color:var(--accent); }
     .tools { display:flex; flex-wrap:wrap; gap:0.4rem; margin:0.5rem 0; }
     .tools span { background:var(--accent-soft); padding:0.2rem 0.6rem; border-radius:999px; font-size:0.85rem; }
@@ -14,39 +14,38 @@
 </head>
 <body>
 
-<h1>סוכני קוד — מה הם יודעים לעשות</h1>
-<p class="meta">Cursor · Claude Code · Codex · Copilot — אותו רעיון, כלים שונים</p>
+<h1>סוכני קוד - מה הם יודעים לעשות</h1>
+<p class="meta">Cursor · Claude Code · Codex · Copilot - אותו רעיון, כלים שונים</p>
 
 <p class="lead">
-  <strong>סוכן קוד</strong> = AI שמחובר לתיקיית פרויקט. אתם מדברים — הוא קורא, כותב, מחפש, ולפעמים מריץ.
+  <strong>סוכן קוד</strong> = AI שמחובר לתיקיית פרויקט. אתם מדברים - הוא קורא, כותב, מחפש, ולפעמים מריץ.
 </p>
 
 <div class="tools">
   <span>Cursor</span><span>Claude Code</span><span>Codex</span><span>Copilot</span>
 </div>
 
-<h2>0. Open Folder — איך מתחילים</h2>
+<h2>0. Open Folder - איך מתחילים</h2>
 <div class="cap">
-  <p>פותחים <strong>את תיקיית הפרויקט</strong> — לא קובץ בודד.</p>
+  <p>פותחים <strong>את תיקיית הפרויקט</strong> - לא קובץ בודד.</p>
   <p>Cursor: File → Open Folder · Claude Code: מתחילים מתוך התיקייה בטרמינל</p>
   <p>מכאן הסוכן רואה את כל הקבצים ועובד בתוכם.</p>
 </div>
 
-<h2>1. פרומפט — איך מדברים</h2>
+<h2>1. פרומפט - איך מדברים</h2>
 <div class="cap">
   <p><strong>פרומפט</strong> = ההוראה במילים רגילות.</p>
   <p>פרומפט טוב = <strong>מטרה + תחום + בדיקה</strong></p>
-  <p>→ <a href="how-to-prompt.html">מדריך פרומפט מלא</a></p>
 </div>
 
 <h2>2. הסוכן בוחר את הקובץ</h2>
 <div class="cap">
-  <p>לא צריך לתייג קבצים. הסוכן כבר רואה את כל הפרויקט שפתחתם — <strong>תארו מה אתם רוצים</strong>, והוא יבחר את הקובץ הנכון.</p>
+  <p>לא צריך לתייג קבצים. הסוכן כבר רואה את כל הפרויקט שפתחתם - <strong>תארו מה אתם רוצים</strong>, והוא יבחר את הקובץ הנכון.</p>
 </div>
 
 <h2>3. מבנה קבצים</h2>
 <div class="cap">
-<pre style="direction:ltr;text-align:left;margin:0;background:#1a1a2e;color:#a8dadc;padding:0.75rem;border-radius:6px;font-size:0.85rem;">my-project/
+<pre style="direction:ltr;text-align:left;margin:0;">my-project/
 ├── game.html           ← המשחק (דפדפן)
 ├── README.md
 ├── CLAUDE.md           ← הוראות קבועות (Claude Code)
@@ -57,39 +56,39 @@
 <h2>4. יצירה ועריכת קבצים</h2>
 <div class="cap">
   <p>הסוכן <strong>יוצר קבצים חדשים</strong> ו<strong>משנה קיימים</strong>.</p>
-  <p>רואים שינויים בעץ הקבצים — ואז <strong>בודקים בדפדפן</strong>.</p>
+  <p>רואים שינויים בעץ הקבצים - ואז <strong>בודקים בדפדפן</strong>.</p>
 </div>
 
 <h2>5. בודקים לפני שמאשרים</h2>
 <div class="cap">
-  <p>הסוכן מראה <strong>מה השתנה</strong> (diff) — שורות ירוקות/אדומות.</p>
+  <p>הסוכן מראה <strong>מה השתנה</strong> (diff) - שורות ירוקות/אדומות.</p>
   <p><strong>לא ללחוץ "אישור" בלי להבין.</strong> AI טועה לפעמים.</p>
-  <p>אחרי אישור — תמיד בדיקה בדפדפן / במשחק.</p>
+  <p>אחרי אישור - תמיד בדיקה בדפדפן / במשחק.</p>
 </div>
 
 <h2>6. מצבי עבודה</h2>
 <div class="cap">
-  <p><strong>Ask</strong> — מסביר, לא משנה קבצים · "מה זה לולאה?"</p>
-  <p><strong>Plan</strong> — מתכנן לפני בנייה · משימות גדולות</p>
-  <p><strong>Agent</strong> — בונה ומשנה קבצים</p>
-  <p><strong>Debug</strong> — עוזר לאתר באגים</p>
+  <p><strong>Ask</strong> - מסביר, לא משנה קבצים · "מה זה לולאה?"</p>
+  <p><strong>Plan</strong> - מתכנן לפני בנייה · משימות גדולות</p>
+  <p><strong>Agent</strong> - בונה ומשנה קבצים</p>
+  <p><strong>Debug</strong> - עוזר לאתר באגים</p>
   <p>זרימה: Ask ללמידה → Plan לתכנון → Agent לבנייה → בדיקה</p>
 </div>
 
 <h2>7. חיפוש בפרויקט</h2>
 <div class="cap">
-  <p>הסוכן <strong>מחפש</strong> בקבצים — מוצא איפה משהו מוגדר.</p>
+  <p>הסוכן <strong>מחפש</strong> בקבצים - מוצא איפה משהו מוגדר.</p>
   <p>שימושי כשהפרויקט גדל.</p>
 </div>
 
-<h2>8. חיפוש באינטרנט — למה?</h2>
+<h2>8. חיפוש באינטרנט - למה?</h2>
 <div class="cap">
   <ul>
     <li>תיעוד עדכני (API, ספרייה, שגיאה)</li>
     <li>מידע שלא היה באימון של הסוכן</li>
     <li>לראות איך אחרים פתרו בעיה דומה</li>
   </ul>
-  <p>אתם עדיין <strong>בודקים</strong> — לא הכול מהרשת נכון.</p>
+  <p>אתם עדיין <strong>בודקים</strong> - לא הכול מהרשת נכון.</p>
 </div>
 
 <h2>9. טרמינל</h2>
@@ -98,41 +97,32 @@
   <p>היום נשאר פשוט: קובץ HTML שנפתח ישירות בדפדפן.</p>
 </div>
 
-<h2>10. Skills — SKILL.md</h2>
+<h2>10. Skills - SKILL.md</h2>
 <div class="cap">
   <p><strong>Skill</strong> = קובץ הוראות שהסוכן קורא כשזה רלוונטי.</p>
   <p>מיקום (Cursor): <code>.cursor/skills/שם/SKILL.md</code></p>
   <p><strong>יצירה:</strong> תיקייה + קובץ עם שם, תיאור, כללים.</p>
   <p><strong>שימוש:</strong> אוטומטי, או <code>/שם-ה-skill</code> בצ'אט.</p>
-  <p>→ <a href="what-is-skill-md.html">הסבר מפורט</a></p>
 </div>
 
 <h2>11. כללי פרויקט (הוראות קבועות)</h2>
 <div class="cap">
-  <p>קובץ שהסוכן קורא <strong>בכל שיחה</strong> — לא צריך לחזור על אותם כללים.</p>
+  <p>קובץ שהסוכן קורא <strong>בכל שיחה</strong> - לא צריך לחזור על אותם כללים.</p>
   <p>Claude Code: <code>CLAUDE.md</code> · Cursor: <code>AGENTS.md</code> או <code>.cursor/rules</code></p>
   <p>דוגמה: "עברית פשוטה · רק HTML · שינוי אחד בכל פעם"</p>
 </div>
 
 <h2>12. סוכני משנה (Sub-agents)</h2>
 <div class="cap">
-  <p>סוכן ראשי <strong>מפנה משימה</strong> לעוזר — חוקר נושא, מחפש בקוד, עובד במקביל.</p>
-  <p>דוגמה: "תבדוק איך עושים צליל ב-HTML" — בזמן שאתם עובדים על משהו אחר.</p>
+  <p>סוכן ראשי <strong>מפנה משימה</strong> לעוזר - חוקר נושא, מחפש בקוד, עובד במקביל.</p>
+  <p>דוגמה: "תבדוק איך עושים צליל ב-HTML" - בזמן שאתם עובדים על משהו אחר.</p>
 </div>
 
 <h2>הלולאה שלכם (מיומנות אנושית)</h2>
 <div class="card highlight">
   <p><strong>תאר → למד/בנה → בדוק → תקן → שפר</strong></p>
-  <p>הסוכן עושה הרבה — <strong>אתם</strong> מחליטים, בודקים, מנחים.</p>
+  <p>הסוכן עושה הרבה - <strong>אתם</strong> מחליטים, בודקים, מנחים.</p>
 </div>
-
-<p>
-  <a href="must-have-checklist.html">רשימת חובה</a> ·
-  <a href="how-to-prompt.html">פרומפט</a> ·
-  <a href="what-is-skill-md.html">SKILL.md</a> ·
-  <a href="two-loops.html">שתי לולאות</a> ·
-  <a href="survival-card.html">להמשך בבית</a>
-</p>
 
 <script src="../assets/site-nav.js"></script>
 </body>

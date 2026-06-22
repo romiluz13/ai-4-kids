@@ -3,121 +3,514 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>סקירה — בונים עם AI</title>
+  <title>מצגת לכיתה - בונים עם AI</title>
   <link rel="stylesheet" href="../assets/lesson.css">
   <style>
-    section { margin: 2.5rem 0; padding-top: 1rem; border-top: 2px solid var(--rule); }
-    section:first-of-type { border-top: none; }
-    .step-row { display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin:1rem 0; font-weight:600; font-size:0.9rem; }
-    .step-row span { background:var(--accent-soft); padding:0.35rem 0.65rem; border-radius:999px; }
-    nav.toc { background:#fff; border:1px solid var(--rule); border-radius:var(--radius); padding:1rem; margin:1rem 0; }
-    nav.toc a { display:block; padding:0.25rem 0; }
+    :root {
+      --deck-bg: oklch(16% 0.06 282);
+      --deck-ink: oklch(96% 0.018 88);
+      --deck-muted: oklch(86% 0.03 282);
+      --deck-accent: oklch(75% 0.18 82);
+      --deck-blue: oklch(68% 0.18 262);
+      --deck-surface: oklch(23% 0.065 282);
+      --deck-rule: oklch(34% 0.06 282);
+    }
+    html, body { height: 100%; }
+    body {
+      max-width: none;
+      min-height: 100%;
+      padding: 0;
+      overflow: hidden;
+      background-color: var(--deck-bg);
+      background-image:
+        radial-gradient(circle at 12% 14%, oklch(34% 0.11 262 / 0.55), transparent 30rem),
+        linear-gradient(135deg, var(--deck-bg), oklch(19% 0.075 302));
+      color: var(--deck-ink);
+    }
+    .deck-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .deck-top,
+    .deck-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem clamp(1rem, 3vw, 2.5rem);
+    }
+    .deck-top {
+      border-bottom: 1px solid var(--deck-rule);
+      background: oklch(16% 0.06 282 / 0.72);
+    }
+    .deck-brand {
+      color: var(--deck-accent);
+      font-family: 'Rubik', 'Heebo', sans-serif;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .deck-links {
+      display: flex;
+      gap: 0.85rem;
+      font-size: 0.9rem;
+    }
+    .deck-links a { color: var(--deck-muted); }
+    .deck-progress {
+      color: var(--deck-muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .deck {
+      position: relative;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-content: center;
+      padding: clamp(1.2rem, 4vw, 4rem);
+    }
+    .slide.active {
+      display: grid;
+      animation: rise .22s ease-out;
+    }
+    .slide-inner {
+      width: min(100%, 68rem);
+      margin-inline: auto;
+      display: grid;
+      gap: clamp(1rem, 2.5vw, 2rem);
+    }
+    .slide.kid .slide-inner { width: min(100%, 58rem); }
+    .eyebrow {
+      color: var(--deck-accent);
+      font-weight: 800;
+      letter-spacing: 0;
+      margin: 0;
+    }
+    .slide h1,
+    .slide h2 {
+      color: var(--deck-ink);
+      border: 0;
+      padding: 0;
+      margin: 0;
+      max-width: 14ch;
+      font-size: clamp(3.2rem, 8vw, 7.4rem);
+      line-height: 0.95;
+    }
+    .slide h2 { font-size: clamp(2.7rem, 7vw, 6rem); }
+    .slide p,
+    .slide li {
+      font-size: clamp(1.25rem, 2.3vw, 2rem);
+      line-height: 1.45;
+    }
+    .slide .leadline {
+      color: var(--deck-muted);
+      max-width: 34ch;
+      margin: 0;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(1rem, 3vw, 2rem);
+      align-items: stretch;
+    }
+    .panel {
+      background: oklch(23% 0.065 282 / 0.88);
+      border: 1px solid var(--deck-rule);
+      border-radius: 8px;
+      padding: clamp(1rem, 2.5vw, 1.8rem);
+    }
+    .panel strong {
+      display: block;
+      color: var(--deck-accent);
+      font-size: clamp(1.4rem, 2.8vw, 2.4rem);
+      margin-bottom: 0.6rem;
+    }
+    .big-quote {
+      background: oklch(96% 0.018 88);
+      color: oklch(20% 0.06 282);
+      border-radius: 8px;
+      padding: clamp(1rem, 3vw, 2rem);
+      font-size: clamp(1.45rem, 3vw, 2.5rem);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 0.55rem;
+    }
+    .steps span,
+    .chips span {
+      display: grid;
+      place-items: center;
+      min-height: 5rem;
+      background: var(--deck-surface);
+      border: 1px solid var(--deck-rule);
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--deck-ink);
+      padding: 0.5rem;
+    }
+    .chips {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      gap: 0.7rem;
+    }
+    .checklist {
+      display: grid;
+      gap: 0.8rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .checklist li {
+      background: var(--deck-surface);
+      border: 1px solid var(--deck-rule);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+    }
+    .demo-band {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: clamp(1rem, 3vw, 2rem);
+      align-items: center;
+    }
+    .screen {
+      background: oklch(12% 0.045 282);
+      border: 1px solid var(--deck-rule);
+      border-radius: 8px;
+      padding: clamp(1rem, 2vw, 1.5rem);
+      box-shadow: 0 24px 80px oklch(0% 0 0 / 0.28);
+      min-height: 17rem;
+    }
+    .screen code {
+      display: block;
+      background: transparent;
+      color: oklch(91% 0.13 150);
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      line-height: 1.75;
+      direction: rtl;
+      text-align: right;
+      white-space: pre-wrap;
+    }
+    .slide a { color: var(--deck-accent); }
+    .deck-controls {
+      border-top: 1px solid var(--deck-rule);
+      background: oklch(16% 0.06 282 / 0.82);
+    }
+    .deck-controls button {
+      border: 1px solid var(--deck-rule);
+      background: var(--deck-surface);
+      color: var(--deck-ink);
+      border-radius: 999px;
+      padding: 0.6rem 1.1rem;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .deck-controls button.primary {
+      background: var(--deck-accent);
+      color: var(--deck-ink);
+      border-color: var(--deck-accent);
+    }
+    .deck-controls button:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+    .dots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+    .dot {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      background: var(--deck-rule);
+    }
+    .dot.active { background: var(--deck-accent); }
+    .speaker { display: none; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 760px) {
+      body { overflow: auto; }
+      .deck-shell { min-height: auto; }
+      .deck { overflow: visible; }
+      .slide {
+        position: static;
+        display: grid;
+        min-height: 100vh;
+        border-bottom: 1px solid var(--deck-rule);
+        padding-bottom: 6rem;
+      }
+      .slide:not(.active) { display: none; }
+      .split,
+      .demo-band,
+      .steps { grid-template-columns: 1fr; }
+      .steps span { min-height: 3.5rem; }
+      .deck-links { display: none; }
+      .slide h1,
+      .slide h2 { max-width: 100%; }
+      .deck-controls {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+      }
+    }
   </style>
 </head>
-<body>
+<body data-nav="none">
+<div class="deck-shell">
+  <header class="deck-top">
+    <a class="deck-brand" href="../index.html">בונה עם AI</a>
+    <div class="deck-links">
+      <a href="class-handout.html">דף עבודה</a>
+      <a href="../reference/survival-card.html">המשך בבית</a>
+      <a href="https://github.com/romiluz13/ai-4-kids" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="deck-progress" id="deckProgress">1/13</div>
+  </header>
 
-<h1>בונים עם AI — סקירה</h1>
-<p class="meta">כל מה שצריך כדי להתחיל לבנות אפליקציות ומשחקים עם מנטור AI · גילאי 11–13</p>
+  <main class="deck" id="deck" aria-live="polite">
+    <section class="slide kid active">
+      <div class="slide-inner">
+        <p class="eyebrow">90 דקות. בלי התקנות בכיתה.</p>
+        <h1>בונים עם AI</h1>
+        <p class="leadline">אתם מחליטים מה לבנות. המנטור בונה, מסביר, ושואל עד שמבינים.</p>
+      </div>
+      <aside class="speaker">פתח מיד עם הבטחה פשוטה: היום הם לא לומדים סינטקס, הם לומדים איך להיות הבוס של סוכן קוד.</aside>
+    </section>
 
-<nav class="toc">
-  <strong>בעמוד הזה</strong>
-  <a href="#agents">מה זה סוכן קוד</a>
-  <a href="#coding">יסודות קוד</a>
-  <a href="#process">התהליך — 7 שלבים</a>
-  <a href="#levels">מאפס לגיבור</a>
-  <a href="#skills">Skills</a>
-  <a href="#start">איך מתחילים</a>
-</nav>
+    <section class="slide">
+      <div class="slide-inner">
+        <p class="eyebrow">רעיון ראשון</p>
+        <h2>סוכן קוד הוא לא צ'אט</h2>
+        <div class="split">
+          <div class="panel">
+            <strong>צ'אט רגיל</strong>
+            <p>עונה במילים. אולי נותן קוד להעתקה.</p>
+          </div>
+          <div class="panel">
+            <strong>סוכן קוד</strong>
+            <p>מחובר לתיקייה. קורא קבצים, משנה קבצים, ומראה מה השתנה.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="agents">
-<h2>מה זה סוכן קוד?</h2>
-<p class="lead"><strong>סוכן קוד</strong> = AI שמחובר ל<strong>תיקיית פרויקט</strong> על המחשב.</p>
-<ul>
-  <li>קורא וכותב <strong>קבצים</strong></li>
-  <li>מסביר, מחפש בפרויקט, לפעמים גם ברשת</li>
-  <li>Cursor · Claude Code · Codex · Copilot — <strong>אותו רעיון</strong>, אפליקציות שונות</li>
-</ul>
-<p>זה <strong>לא</strong> צ'אט רגיל. הצ'אט מדבר. הסוכן <strong>בונה</strong> בתיקייה שלכם.</p>
-<div class="quiz" data-quiz data-correct="1"
-     data-ok="נכון — אתם מחליטים מה לבנות."
-     data-no="הסוכן מחכה להוראות שלכם.">
-  <p class="quiz-question">מי מחליט מה לבנות?</p>
-  <div class="quiz-options">
-    <button class="quiz-option" type="button">הסוכן תמיד לבד</button>
-    <button class="quiz-option" type="button">אתם — הסוכן עוזר</button>
-    <button class="quiz-option" type="button">המחשב לבד</button>
-  </div>
-  <div class="quiz-feedback"></div>
+    <section class="slide">
+      <div class="slide-inner">
+        <p class="eyebrow">התפקידים היום</p>
+        <h2>אתם המנהלים</h2>
+        <div class="split">
+          <div class="panel">
+            <strong>הכיתה</strong>
+            <p>מציעה רעיונות, בוחרת, כותבת מפרט, בודקת בדפדפן.</p>
+          </div>
+          <div class="panel">
+            <strong>המורה</strong>
+            <p>מדגים סוכן קוד על המסך הגדול. לא מתקינים כלום בכיתה.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-inner">
+        <p class="eyebrow">המסלול</p>
+        <h2>לא קופצים לקוד</h2>
+        <div class="steps" aria-label="שבעת שלבי הבנייה">
+          <span>רעיון</span>
+          <span>תכנון</span>
+          <span>מפרט</span>
+          <span>צעדים</span>
+          <span>בנייה</span>
+          <span>בדיקה</span>
+          <span>שיפור</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide kid">
+      <div class="slide-inner">
+        <p class="eyebrow">שלב 1</p>
+        <h2>רעיון לפני קוד</h2>
+        <div class="big-quote">תן לי 3 רעיונות פשוטים למשחק או אפליקציה. אל תכתוב קוד עדיין.</div>
+        <p class="leadline">הילד בוחר. לא הסוכן. לא המורה.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-inner">
+        <p class="eyebrow">שלב 3</p>
+        <h2>מפרט קצר</h2>
+        <ul class="checklist">
+          <li><strong>מטרה:</strong> זה משחק או אפליקציה שבו...</li>
+          <li><strong>תחום:</strong> שינוי אחד, בקובץ אחד אם אפשר.</li>
+          <li><strong>בדיקה:</strong> מה רואים בדפדפן כשזה עובד?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-inner">
+        <p class="eyebrow">הדגמה חיה 1</p>
+        <h2>המפרט הופך למסך</h2>
+        <div class="demo-band">
+          <div class="screen">
+            <code>קרא את המפרט.
+בנה רק את הצעד הראשון.
+אחרי זה תגיד לנו מה לבדוק בדפדפן.</code>
+          </div>
+          <p class="leadline">עוצרים אחרי שינוי אחד. מסתכלים על diff. פותחים בדפדפן.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide kid">
+      <div class="slide-inner">
+        <p class="eyebrow">בדיקה</p>
+        <h2>AI טועה לפעמים</h2>
+        <div class="big-quote">קורה ___, רציתי ___. תקן רק את זה.</div>
+        <p class="leadline">באג הוא שיעור. לא כישלון.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-inner">
+        <p class="eyebrow">כנות</p>
+        <h2>בודקים לפני שסומכים</h2>
+        <div class="split">
+          <div class="panel">
+            <strong>תיעוד</strong>
+            <p>מדריך רשמי של כלי. מתחילים מ-README או Getting Started.</p>
+          </div>
+          <div class="panel">
+            <strong>קוד פתוח</strong>
+            <p>מחפשים דוגמה פשוטה שכבר עובדת, ואז לומדים ממנה.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-inner">
+        <p class="eyebrow">המנטור</p>
+        <h2>Skills הם הוראות לסוכן</h2>
+        <div class="chips">
+          <span>setup-mentor</span>
+          <span>kid-brainstorm</span>
+          <span>kid-prompt-coach</span>
+          <span>kid-build-workflow</span>
+          <span>find-help</span>
+          <span>ai-build-buddy</span>
+        </div>
+        <p class="leadline">המיומנות של הילד היא לחשוב, לבדוק, לשאול, ולשפר.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-inner">
+        <p class="eyebrow">מאפס לגיבור</p>
+        <h2>המנטור עוזב בהדרגה</h2>
+        <div class="steps">
+          <span>1 מגלה</span>
+          <span>2 בונה</span>
+          <span>3 חוקר</span>
+          <span>4 ארכיטקט</span>
+          <span>5 גיבור</span>
+        </div>
+        <p class="leadline">עולים רמה רק כשמסבירים במילים שלכם מה קרה.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="slide-inner">
+        <p class="eyebrow">בבית</p>
+        <h2>מתחילים עם הורים</h2>
+        <ul class="checklist">
+          <li>מתקינים סוכן קוד אחד: Cursor, Claude Code, Codex, Copilot או Gemini CLI.</li>
+          <li>מורידים את המאגר מ-GitHub.</li>
+          <li>פותחים את התיקייה בסוכן וכותבים את משפט ההתחלה.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide kid">
+      <div class="slide-inner">
+        <p class="eyebrow">משפט ההתחלה</p>
+        <h2>קחו את זה הביתה</h2>
+        <div class="screen">
+          <code>קרא את AGENTS.md והפעל setup-mentor.
+דבר איתי בעברית פשוטה.
+מה היית מציע שאבנה היום: משחק או אפליקציה?</code>
+        </div>
+        <p class="leadline"><a href="https://github.com/romiluz13/ai-4-kids" target="_blank" rel="noopener">github.com/romiluz13/ai-4-kids</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="deck-controls">
+    <button type="button" id="prevSlide">הקודם</button>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+    <button class="primary" type="button" id="nextSlide">הבא</button>
+  </footer>
 </div>
-</section>
 
-<section id="coding">
-<h2>יסודות קוד — מה כדאי להבין</h2>
-<div class="card">
-  <p><strong>קובץ</strong> — משהו שנשמר (למשל <code>game.html</code>)</p>
-  <p><strong>תיקייה</strong> — מארגנת קבצים</p>
-  <p><strong>פרויקט</strong> = תיקייה אחת</p>
-  <p><strong>דפדפן</strong> — שם רואים ובודקים את מה שבניתם</p>
-  <p><strong>באג</strong> — משהו שלא עובד. נורמלי לגמרי.</p>
-  <p><strong>Open Folder</strong> — פותחים את תיקיית הפרויקט בסוכן, לא קובץ בודד</p>
-</div>
-</section>
+<script>
+  (function () {
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var prev = document.getElementById('prevSlide');
+    var next = document.getElementById('nextSlide');
+    var progress = document.getElementById('deckProgress');
+    var dots = document.getElementById('dots');
+    var index = 0;
 
-<section id="process">
-<h2>התהליך — איך עובדים עם AI</h2>
-<p>לא קופצים ישר לקוד. יש <strong>שבעה שלבים</strong>:</p>
-<div class="step-row">
-  <span>1 רעיון</span><span>2 תכנון</span><span>3 מפרט</span><span>4 צעדים</span>
-  <span>5 בנייה</span><span>6 בדיקה</span><span>7 שיפור</span>
-</div>
-<ol>
-  <li><strong>רעיון</strong> — בוחרים מה לבנות. <em>בלי קוד.</em></li>
-  <li><strong>תכנון</strong> — מי ישתמש? מה קורה כשמצליחים?</li>
-  <li><strong>מפרט</strong> — "זה משחק/אפליקציה שבו ___" + מה בודקים</li>
-  <li><strong>צעדים</strong> — 2–4 משימות קטנות, אחת בכל פעם</li>
-  <li><strong>בנייה</strong> — הסוכן משנה קבצים</li>
-  <li><strong>בדיקה</strong> — פותחים בדפדפן. <strong>אתם</strong> הבוס — AI טועה לפעמים</li>
-  <li><strong>שיפור</strong> — "קורה X, רציתי Y" — תיקון אחד</li>
-</ol>
-<p>→ <a href="../reference/the-full-journey.html">המסע המלא</a></p>
-</section>
+    slides.forEach(function (_, i) {
+      var dot = document.createElement('span');
+      dot.className = 'dot';
+      dots.appendChild(dot);
+    });
 
-<section id="levels">
-<h2>מאפס לגיבור</h2>
-<p>המנטור מעלה אתכם רמה אחרי רמה, עד שאתם בונים לבד:</p>
-<div class="step-row">
-  <span>1 מגלה</span><span>2 בונה</span><span>3 חוקר</span><span>4 ארכיטקט</span><span>5 גיבור</span>
-</div>
-<p>→ <a href="../reference/mentor-levels.html">5 הרמות במלואן</a></p>
-</section>
+    function readHash() {
+      var n = Number((location.hash || '').replace('#', ''));
+      return Number.isFinite(n) && n > 0 ? Math.min(n - 1, slides.length - 1) : 0;
+    }
 
-<section id="skills">
-<h2>Skills — הוראות למנטור</h2>
-<p><strong>Skill</strong> = קובץ <code>SKILL.md</code> שמלמד את <em>הסוכן</em> איך לעזור לכם.</p>
-<p>זו <strong>לא</strong> המיומנות שלכם. המיומנות שלכם = לחשוב, לבדוק, לשאול.</p>
-<div class="card">
-  <p><code>setup-mentor</code> — מתקין את הכול בפעם הראשונה</p>
-  <p><code>kid-brainstorm</code> — רעיונות, בלי קוד</p>
-  <p><code>ai-build-buddy</code> — המנטור בזמן בנייה</p>
-</div>
-</section>
+    function render(nextIndex, updateHash) {
+      index = Math.max(0, Math.min(nextIndex, slides.length - 1));
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle('active', i === index);
+      });
+      Array.prototype.forEach.call(dots.children, function (dot, i) {
+        dot.classList.toggle('active', i === index);
+      });
+      progress.textContent = (index + 1) + '/' + slides.length;
+      prev.disabled = index === 0;
+      next.disabled = index === slides.length - 1;
+      if (updateHash) history.replaceState(null, '', '#' + (index + 1));
+    }
 
-<section id="start">
-<h2>איך מתחילים</h2>
-<div class="card highlight">
-  <ol>
-    <li>מתקינים סוכן קוד (עם הורים)</li>
-    <li>מורידים את המאגר ופותחים אותו בסוכן</li>
-    <li>כותבים לסוכן:</li>
-  </ol>
-  <pre style="white-space:pre-wrap;">קרא את AGENTS.md והפעל setup-mentor.
-דבר איתי בעברית פשוטה.</pre>
-  <p>מהיום — בכל פרויקט חדש המנטור כבר אצלכם.</p>
-</div>
-<p>→ <a href="../reference/choose-your-agent.html">בחרו סוכן</a> · <a href="../reference/survival-card.html">כרטיס המשך</a></p>
-</section>
-
-<script src="../assets/quiz.js"></script>
-<script src="../assets/site-nav.js"></script>
+    prev.addEventListener('click', function () { render(index - 1, true); });
+    next.addEventListener('click', function () { render(index + 1, true); });
+    window.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowLeft' || event.key === 'PageDown' || event.key === ' ') render(index + 1, true);
+      if (event.key === 'ArrowRight' || event.key === 'PageUp') render(index - 1, true);
+      if (event.key === 'Home') render(0, true);
+      if (event.key === 'End') render(slides.length - 1, true);
+    });
+    window.addEventListener('hashchange', function () { render(readHash(), false); });
+    render(readHash(), false);
+  })();
+</script>
 </body>
 </html>

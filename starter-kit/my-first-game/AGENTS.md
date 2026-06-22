@@ -1,4 +1,4 @@
-# Starter game project — agent instructions
+# Starter game project - agent instructions
 
 Project for kids aged 11–13. **Hebrew, simple language.**
 
@@ -20,6 +20,8 @@ Skills may be in any of:
 - `.cursor/skills/`
 - `.claude/skills/`
 - `.agents/skills/`
+
+Gemini may also read `GEMINI.md`, which points back here.
 
 Load `ai-build-buddy` when building. Load `kid-prompt-coach` when the prompt is vague.
 

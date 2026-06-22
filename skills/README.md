@@ -1,13 +1,15 @@
-# Skills — המנטור, לכל סוכן קוד
+# Skills - המנטור, לכל סוכן קוד
 
-פורמט [agentskills.io](https://agentskills.io) — עובד ב-Cursor, Claude Code, Codex, Copilot, Gemini.
+פורמט `SKILL.md`. עובד הכי טוב בסוכנים שתומכים ב-Agent Skills.
+
+Cursor, Claude Code, Codex ו-Gemini CLI תומכים בזה. Copilot קורא `AGENTS.md`; תמיכת Skills תלויה במשטח.
 
 ## מה יש כאן
 
 | Skill | מתי |
 |-------|-----|
-| `setup-mentor` | שיבוט ראשון — מתקין הכול |
-| `kid-brainstorm` | אין רעיון עדיין — **בלי קוד** |
+| `setup-mentor` | שיבוט ראשון - מתקין הכול |
+| `kid-brainstorm` | אין רעיון עדיין - **בלי קוד** |
 | `kid-prompt-coach` | בונים מפרט קצר |
 | `kid-build-workflow` | איזה שלב בתהליך? |
 | `find-help` | מחקר, תיעוד וקוד פתוח כשצריך עזרה |
@@ -25,11 +27,13 @@
 
 | כלי | תיקייה |
 |-----|--------|
-| Cursor | `.cursor/skills/` |
+| Cursor | `.cursor/skills/` או `.agents/skills/` |
 | Claude Code | `.claude/skills/` |
-| Codex / Copilot / Gemini | `.agents/skills/` |
+| Codex | `.agents/skills/` בפרויקט או `~/.codex/skills/` |
+| Gemini CLI | `.agents/skills/` או `.gemini/skills/` |
+| Copilot | `AGENTS.md` בתור הוראות קבועות |
 
-ב-`starter-kit/my-first-game` כבר מותקן בשלושת הנתיבים.
+ב-`starter-kit/my-first-game` כבר מותקן בשלושת הנתיבים המרכזיים.
 
 ## התקנה ידנית
 
@@ -43,10 +47,10 @@ done
 
 ## שימוש
 
-- אוטומטי — לפי `description` ב-SKILL.md
-- ידני — `/skill-name` (Cursor, Claude) · `$skill-name` (Codex)
+- אוטומטי לפי `description` ב-SKILL.md
+- ידני לפי הכלי: למשל `/skill-name` או `$skill-name`
 
-## המנגנון — מאפס לגיבור
+## המנגנון
 
 `ai-build-buddy` מעלה את הילד דרך 5 רמות עד שהוא בונה לבד.
 ראו [מאפס לגיבור](https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html).

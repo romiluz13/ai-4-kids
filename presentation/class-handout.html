@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>דף עבודה - השיעור</title>
+  <link rel="stylesheet" href="../assets/lesson.css">
+  <style>
+    .banner {
+      background: var(--accent);
+      color: var(--surface);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius);
+      margin: 1rem 0 1.5rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .fill-line {
+      border-bottom: 1px solid var(--rule);
+      min-height: 1.75rem;
+      margin: 0.35rem 0 0.75rem;
+    }
+    .url-list a { word-break: break-all; }
+    .check-row { display: flex; gap: 0.5rem; align-items: flex-start; margin: 0.4rem 0; }
+    .check-row input { margin-top: 0.35rem; flex-shrink: 0; }
+    @media print {
+      .no-print { display: none; }
+      body { font-size: 14px; padding: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="banner">בכיתה: אתם המנהלים. המורה מדגים את הסוכן.</div>
+
+<h1>דף עבודה - בונים עם AI</h1>
+<p class="meta">מחשב + אינטרנט בלבד · בלי ChatGPT · בלי התקנה היום</p>
+
+<h2>קישורים לשיעור</h2>
+<ul class="url-list">
+  <li><strong>האתר:</strong> <a href="https://ai-4-kids.rom-88f.workers.dev" target="_blank" rel="noopener">ai-4-kids.rom-88f.workers.dev</a></li>
+  <li><strong>המאגר (להורדה בבית):</strong> <a href="https://github.com/romiluz13/ai-4-kids" target="_blank" rel="noopener">github.com/romiluz13/ai-4-kids</a></li>
+  <li><strong>רעיונות למשחק:</strong> <a href="../reference/first-prompt-cards.html">רעיונות לפרויקט ראשון</a></li>
+  <li><strong>7 השלבים:</strong> <a href="../reference/the-full-journey.html">המסע המלא</a></li>
+  <li><strong>להמשך בבית:</strong> <a href="../reference/survival-card.html">כרטיס המשך</a></li>
+</ul>
+
+<h2>תבנית מפרט - ממלאים ביחד בכיתה</h2>
+<div class="card">
+  <p><strong>שם:</strong> <span class="fill-line"></span></p>
+  <p><strong>רעיון שבחרנו (מספר או שם):</strong></p>
+  <div class="fill-line"></div>
+  <p><strong>מטרה - זה משחק שבו:</strong></p>
+  <div class="fill-line"></div>
+  <div class="fill-line"></div>
+  <p><strong>תחום:</strong> רק <code>game.html</code> · שינוי אחד בכל פעם</p>
+  <p><strong>בדיקה - בדפדפן אני רואה:</strong></p>
+  <div class="check-row"><input type="checkbox" disabled> <span class="fill-line" style="flex:1;border:none"></span></div>
+  <div class="check-row"><input type="checkbox" disabled> <span class="fill-line" style="flex:1;border:none"></span></div>
+  <div class="check-row"><input type="checkbox" disabled> <span class="fill-line" style="flex:1;border:none"></span></div>
+</div>
+
+<h2>תיקון אחד - אחרי בדיקה</h2>
+<div class="card">
+  <p><strong>קורה:</strong> <span class="fill-line"></span></p>
+  <p><strong>רציתי:</strong> <span class="fill-line"></span></p>
+</div>
+
+<h2>7 השלבים - סמנו מה עשינו היום</h2>
+<div class="card">
+  <div class="check-row"><input type="checkbox" disabled> <span>1. רעיון - בחרנו מה לבנות</span></div>
+  <div class="check-row"><input type="checkbox" disabled> <span>2. תכנון - מי משחק? מה קורה?</span></div>
+  <div class="check-row"><input type="checkbox" disabled> <span>3. מפרט - כתבנו מטרה + בדיקה</span></div>
+  <div class="check-row"><input type="checkbox" disabled> <span>4. צעדים - פירקנו למשימות</span></div>
+  <div class="check-row"><input type="checkbox" disabled> <span>5. בנייה - המורה הדגים על המסך</span></div>
+  <div class="check-row"><input type="checkbox" disabled> <span>6. בדיקה - בדפדפן: עובד / לא עובד</span></div>
+  <div class="check-row"><input type="checkbox" disabled> <span>7. שיפור - תיקון אחד מהכיתה</span></div>
+</div>
+
+<h2>בבית - עם הורים</h2>
+<div class="card highlight">
+  <ol>
+    <li>התקינו סוכן קוד (Cursor / Claude Code / Copilot)</li>
+    <li>הורידו את המאגר מ-GitHub</li>
+    <li>פתחו את המאגר בסוכן וכתבו:</li>
+  </ol>
+  <pre style="white-space:pre-wrap;direction:ltr;text-align:left;font-size:0.85rem;">קרא AGENTS.md והפעל setup-mentor. דבר בעברית פשוטה.</pre>
+</div>
+
+<script src="../assets/site-nav.js"></script>
+</body>
+</html>

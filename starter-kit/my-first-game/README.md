@@ -1,6 +1,6 @@
 # ערכת ההתחלה שלכם
 
-הפרויקט שבו תבנו — משחק או אפליקציה — עם המנטור.
+הפרויקט שבו תבנו - משחק או אפליקציה - עם המנטור.
 
 ## הדרך הקלה
 
@@ -20,8 +20,8 @@
 
 | קובץ / תיקייה | תפקיד |
 |---------------|--------|
-| `game.html` | הפרויקט — נפתח בדפדפן (משחק או אפליקציה) |
-| `templates/SPEC.md` | מפרט — מה בונים |
+| `game.html` | הפרויקט - נפתח בדפדפן (משחק או אפליקציה) |
+| `templates/SPEC.md` | מפרט - מה בונים |
 | `templates/TASKS.md` | משימות קטנות |
 | `.cursor / .claude / .agents` | המנטור (skills) מותקן |
 
@@ -33,6 +33,6 @@
 
 ## עוד חומרים
 
-- [מאפס לגיבור — 5 הרמות](https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html)
-- [המסע המלא — 7 השלבים](https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html)
+- [מאפס לגיבור - 5 הרמות](https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html)
+- [המסע המלא - 7 השלבים](https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html)
 - [רשימת ה-Skills](../../skills/README.md)

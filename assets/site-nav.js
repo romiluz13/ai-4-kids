@@ -2,75 +2,83 @@
   var s = document.currentScript;
   var src = (s && s.src) || '';
   var base = src.replace(/assets\/site-nav\.js.*$/, '');
+  var GITHUB = 'https://github.com/romiluz13/ai-4-kids';
 
-  // Top jump nav
-  var topItems = [
-    ['index.html', 'בית'],
-    ['reference/the-full-journey.html', 'המסע'],
-    ['reference/mentor-levels.html', 'מאפס לגיבור'],
-    ['reference/how-to-prompt.html', 'פרומפט'],
-    ['reference/find-help.html', 'מחקר'],
-    ['reference/choose-your-agent.html', 'סוכנים'],
-    ['reference/glossary.html', 'מילון']
-  ];
+  if (document.body && document.body.getAttribute('data-nav') === 'none') return;
 
-  // Ordered learning path (the "next / next" flow)
-  var SEQ = [
-    ['presentation/class-presentation.html', 'סקירה — כל הרעיון'],
-    ['lessons/0001-ai-is-your-copilot.html', '1 · מה זה סוכן קוד'],
-    ['lessons/0002-the-dev-world.html', '2 · קבצים ותיקיות'],
-    ['lessons/0003-agent-capabilities.html', '3 · יכולות הסוכן'],
-    ['lessons/0004-skills-and-skill-md.html', '4 · Skills'],
-    ['lessons/0005-the-build-loop.html', '5 · המסע — 7 שלבים'],
-    ['lessons/0006-watch-build-home.html', '6 · הפרויקט הראשון'],
-    ['reference/the-full-journey.html', 'המסע המלא'],
-    ['reference/mentor-levels.html', 'מאפס לגיבור'],
-    ['reference/how-to-prompt.html', 'איך כותבים מפרט'],
-    ['reference/find-help.html', 'מחקר, תיעוד וקוד פתוח'],
-    ['reference/choose-your-agent.html', 'בחרו סוכן קוד'],
-    ['reference/survival-card.html', 'להמשיך בבית']
+  // One public path. Extra reference pages return home instead of becoming a maze.
+  var SITE_PATH = [
+    ['presentation/class-handout.html', 'דף עבודה'],
+    ['reference/first-prompt-cards.html', 'רעיונות'],
+    ['reference/how-to-prompt.html', 'מפרט'],
+    ['reference/the-full-journey.html', 'שבעה שלבים'],
+    ['reference/what-is-skill-md.html', 'Skills'],
+    ['reference/survival-card.html', 'להמשיך בבית'],
+    ['reference/choose-your-agent.html', 'בחרו סוכן']
   ];
 
   function fileOf(p) { return (p || '').split('/').pop(); }
   var cur = fileOf(location.pathname) || 'index.html';
+  var total = SITE_PATH.length;
 
-  function isActive(href) {
-    var f = fileOf(href);
-    if (f === 'index.html') return /\/index\.html$|\/$/.test(location.pathname);
-    if (href.indexOf('lessons/') === 0) return location.pathname.indexOf('/lessons/') !== -1;
-    return location.pathname.indexOf(f) !== -1;
+  function findIdx() {
+    for (var i = 0; i < SITE_PATH.length; i++) {
+      if (fileOf(SITE_PATH[i][0]) === cur) return i;
+    }
+    return -1;
   }
 
-  var topLinks = topItems.map(function (it) {
-    return '<a href="' + base + it[0] + '"' + (isActive(it[0]) ? ' class="active"' : '') + '>' + it[1] + '</a>';
-  }).join('');
+  var idx = findIdx();
+  var stepNum = idx === -1 ? 0 : idx + 1;
+
+  function btn(cls, href, label, hint, external) {
+    var ext = external ? ' target="_blank" rel="noopener"' : '';
+    var h = external ? href : base + href;
+    return '<a class="' + cls + '" href="' + h + '"' + ext + '><small>' + hint + '</small>' + label + '</a>';
+  }
+
+  var progressHtml = '';
+  if (cur === 'index.html') {
+    progressHtml = '<span class="site-nav-progress">ערכת התחלה לילדים</span>';
+  } else if (idx !== -1) {
+    progressHtml = '<span class="site-nav-progress">מסלול בית · ' + stepNum + '/' + total + '</span>';
+  } else {
+    progressHtml = '<span class="site-nav-progress"><a href="' + base + 'presentation/class-presentation.html">מצגת</a> · <a href="' + base + 'presentation/class-handout.html">דף עבודה</a></span>';
+  }
 
   var topHtml =
     '<nav class="site-nav" dir="rtl">' +
       '<a class="brand" href="' + base + 'index.html">בונה עם AI</a>' +
-      '<div class="site-nav-links">' + topLinks + '</div>' +
+      progressHtml +
     '</nav>';
 
   if (document.body) document.body.insertAdjacentHTML('afterbegin', topHtml);
 
-  // Build the sequence (prev/next) footer
-  var idx = -1;
-  for (var i = 0; i < SEQ.length; i++) { if (fileOf(SEQ[i][0]) === cur) { idx = i; break; } }
-
-  function btn(cls, href, label, hint) {
-    return '<a class="' + cls + '" href="' + base + href + '"><small>' + hint + '</small>' + label + '</a>';
-  }
-
   var seqHtml = '';
-  if (idx !== -1) {
+
+  if (cur === 'index.html') {
+    seqHtml =
+      '<nav class="seq-nav seq-nav--single" dir="rtl">' +
+        btn('next', 'presentation/class-presentation.html', 'מצגת לכיתה', 'התחילו כאן') +
+      '</nav>';
+  } else if (idx !== -1) {
     seqHtml = '<nav class="seq-nav" dir="rtl">';
-    if (idx > 0) seqHtml += btn('prev', SEQ[idx - 1][0], SEQ[idx - 1][1], '⟶ הקודם');
-    if (idx < SEQ.length - 1) seqHtml += btn('next', SEQ[idx + 1][0], SEQ[idx + 1][1], 'הבא ⟵');
-    else seqHtml += btn('next', 'index.html', 'חזרה לבית', 'סיימתם את המסלול! ⟵');
+    if (idx > 0) {
+      seqHtml += btn('prev', SITE_PATH[idx - 1][0], SITE_PATH[idx - 1][1], '⟶ הקודם');
+    } else {
+      seqHtml += btn('prev', 'index.html', 'בית', '⟶ הקודם');
+    }
+    if (idx < SITE_PATH.length - 1) {
+      seqHtml += btn('next', SITE_PATH[idx + 1][0], SITE_PATH[idx + 1][1], 'הבא ⟵');
+    } else {
+      seqHtml += btn('next', GITHUB, 'הורידו את המאגר', 'סיימתם! התחילו לבנות ⟵', true);
+    }
     seqHtml += '</nav>';
-  } else if (cur !== 'index.html') {
-    seqHtml = '<nav class="seq-nav" dir="rtl">' +
-      btn('next', SEQ[0][0], 'התחילו את המסלול', 'מסלול הלימוד ⟵') + '</nav>';
+  } else {
+    seqHtml =
+      '<nav class="seq-nav seq-nav--single" dir="rtl">' +
+        btn('prev', 'index.html', 'בית', 'חזרה') +
+      '</nav>';
   }
 
   if (seqHtml && document.body) document.body.insertAdjacentHTML('beforeend', seqHtml);

@@ -1,5 +1,5 @@
 /**
- * Simple quiz widget — equal-length answers, instant feedback.
+ * Simple quiz widget: equal-length answers, instant feedback.
  * Usage: data-quiz on container, data-correct on the right button index (0-based).
  */
 document.querySelectorAll('[data-quiz]').forEach((quiz) => {
@@ -21,7 +21,7 @@ document.querySelectorAll('[data-quiz]').forEach((quiz) => {
       } else {
         btn.classList.add('wrong');
         options[correct].classList.add('correct');
-        feedback.textContent = quiz.dataset.no || 'לא בדיוק — תסתכל על התשובה הירוקה.';
+        feedback.textContent = quiz.dataset.no || 'לא בדיוק. תסתכל על התשובה הירוקה.';
         feedback.className = 'quiz-feedback show no';
       }
     });
