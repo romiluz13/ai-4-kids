@@ -15,20 +15,20 @@
 <body>
 
 <h1>סוכני קוד - מה הם יודעים לעשות</h1>
-<p class="meta">Cursor · Claude Code · Codex · Copilot - אותו רעיון, כלים שונים</p>
+<p class="meta">Cursor · Claude Code · Codex · Copilot · Gemini - אותו רעיון, כלים שונים</p>
 
 <p class="lead">
   <strong>סוכן קוד</strong> = AI שמחובר לתיקיית פרויקט. אתם מדברים - הוא קורא, כותב, מחפש, ולפעמים מריץ.
 </p>
 
 <div class="tools">
-  <span>Cursor</span><span>Claude Code</span><span>Codex</span><span>Copilot</span>
+  <span>Cursor</span><span>Claude Code</span><span>Codex</span><span>Copilot</span><span>Gemini</span>
 </div>
 
 <h2>0. Open Folder - איך מתחילים</h2>
 <div class="cap">
   <p>פותחים <strong>את תיקיית הפרויקט</strong> - לא קובץ בודד.</p>
-  <p>Cursor: File → Open Folder · Claude Code: מתחילים מתוך התיקייה בטרמינל</p>
+  <p>Cursor: File → Open Folder · Claude Code / Codex / Gemini: מתחילים מתוך תיקיית הפרויקט</p>
   <p>מכאן הסוכן רואה את כל הקבצים ועובד בתוכם.</p>
 </div>
 
@@ -48,8 +48,10 @@
 <pre style="direction:ltr;text-align:left;margin:0;">my-project/
 ├── game.html           ← המשחק (דפדפן)
 ├── README.md
-├── CLAUDE.md           ← הוראות קבועות (Claude Code)
-└── .cursor/skills/     ← Skills (Cursor)</pre>
+├── AGENTS.md           ← הוראות קבועות
+├── CLAUDE.md           ← מפנה ל-AGENTS.md
+├── GEMINI.md           ← מפנה ל-AGENTS.md
+└── .agents/skills/     ← Skills משותפים</pre>
   <p>פרויקט = <strong>תיקייה אחת</strong>. שמות תיקיות וקבצים = רמזים לסוכן.</p>
 </div>
 
@@ -100,7 +102,7 @@
 <h2>10. Skills - SKILL.md</h2>
 <div class="cap">
   <p><strong>Skill</strong> = קובץ הוראות שהסוכן קורא כשזה רלוונטי.</p>
-  <p>מיקום (Cursor): <code>.cursor/skills/שם/SKILL.md</code></p>
+  <p>מיקום נפוץ: <code>.agents/skills/שם/SKILL.md</code>. Cursor יכול גם לקרוא <code>.cursor/skills/</code>.</p>
   <p><strong>יצירה:</strong> תיקייה + קובץ עם שם, תיאור, כללים.</p>
   <p><strong>שימוש:</strong> אוטומטי, או <code>/שם-ה-skill</code> בצ'אט.</p>
 </div>
@@ -108,7 +110,7 @@
 <h2>11. כללי פרויקט (הוראות קבועות)</h2>
 <div class="cap">
   <p>קובץ שהסוכן קורא <strong>בכל שיחה</strong> - לא צריך לחזור על אותם כללים.</p>
-  <p>Claude Code: <code>CLAUDE.md</code> · Cursor: <code>AGENTS.md</code> או <code>.cursor/rules</code></p>
+  <p>הבסיס כאן: <code>AGENTS.md</code>. Claude Code ו-Gemini מקבלים קובץ מפנה משלהם.</p>
   <p>דוגמה: "עברית פשוטה · רק HTML · שינוי אחד בכל פעם"</p>
 </div>
 
