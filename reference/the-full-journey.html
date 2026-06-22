@@ -87,11 +87,11 @@
 
 <h2>מצבים לפי כלי</h2>
 <table>
-  <tr><th>שלב</th><th>Cursor</th><th>Claude Code</th><th>Codex / Copilot</th></tr>
-  <tr><td>רעיון, תכנון, מפרט</td><td>Ask</td><td>Ask / צ'אט</td><td>Ask / ללא עריכה</td></tr>
-  <tr><td>צעדים</td><td>Plan</td><td>Plan (Shift+Tab)</td><td>תכנון בטקסט</td></tr>
-  <tr><td>בנייה</td><td>Agent</td><td>Agent</td><td>Agent / מימוש</td></tr>
-  <tr><td>באגים</td><td>Debug</td><td>Debug</td><td>תיאור הבעיה</td></tr>
+  <tr><th>שלב</th><th>Cursor</th><th>Claude Code</th><th>Codex / Gemini</th><th>Copilot</th></tr>
+  <tr><td>רעיון, תכנון, מפרט</td><td>Ask</td><td>Ask / צ'אט</td><td>צ'אט בלי עריכה</td><td>צ'אט + AGENTS.md</td></tr>
+  <tr><td>צעדים</td><td>Plan</td><td>Plan</td><td>תכנון בטקסט</td><td>תכנון בטקסט</td></tr>
+  <tr><td>בנייה</td><td>Agent</td><td>Agent</td><td>Agent / מימוש</td><td>מימוש לפי הכלי</td></tr>
+  <tr><td>באגים</td><td>Debug</td><td>Debug</td><td>תיאור הבעיה</td><td>תיאור הבעיה</td></tr>
 </table>
 <p class="meta">לא צריך לזכור את השמות - פשוט תארו מה אתם רוצים, והסוכן יבין.</p>
 
@@ -99,6 +99,7 @@
 <ol>
   <li>שבטו את המאגר מ-GitHub</li>
   <li>פתחו אותו בסוכן → "הפעל setup-mentor והתקן הכול"</li>
+  <li>אם צריך: <code>bash scripts/install-mentor-skills.sh</code></li>
   <li>התחילו בשלב 1 - רעיון</li>
 </ol>
 

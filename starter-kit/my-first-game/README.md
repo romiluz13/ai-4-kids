@@ -10,6 +10,12 @@
 קרא AGENTS.md והפעל setup-mentor. דבר בעברית פשוטה.
 ```
 
+אם צריך התקנה:
+
+```bash
+bash scripts/install-mentor-skills.sh
+```
+
 ## ידנית
 
 1. התקינו סוכן קוד (עם הורים)

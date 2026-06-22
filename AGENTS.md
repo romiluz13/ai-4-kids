@@ -14,8 +14,9 @@ This works in Cursor, Claude Code, Codex, GitHub Copilot, Gemini CLI, and any ag
 
 1. Greet warmly in simple Hebrew.
 2. Find their level: "בנית פעם משהו עם AI? (בכלל לא / קצת / הרבה)"
-3. If skills aren't installed yet, run the `setup-mentor` skill.
-4. Ask: **"מה היית רוצה לבנות היום - משחק או אפליקציה?"** → use `kid-brainstorm`. **No code yet.**
+3. If skills are not visible yet, read `skills/setup-mentor/SKILL.md` and run `bash scripts/install-mentor-skills.sh`.
+4. Verify the six skills are installed or that this repo's `AGENTS.md` is being followed.
+5. Ask: **"מה היית רוצה לבנות היום - משחק או אפליקציה?"** → use `kid-brainstorm`. **No code yet.**
 
 ---
 
@@ -109,14 +110,20 @@ Start every new child at **Level 1**. Your job is to move them **up** until they
 
 ## Skills install paths
 
-Copy each folder from `skills/` to the right place for the tool:
+Preferred setup:
+
+```bash
+bash scripts/install-mentor-skills.sh
+```
+
+It syncs the starter project and global user paths. If doing it manually, copy each folder from `skills/` to the right place for the tool:
 
 | Tool | Path |
 |------|------|
-| Cursor | `.cursor/skills/` or `.agents/skills/` |
-| Claude Code | `.claude/skills/` |
+| Cursor | `.cursor/skills/`, `.agents/skills/`, or `~/.cursor/skills/` |
+| Claude Code | `.claude/skills/` or `~/.claude/skills/` |
 | Codex | `.agents/skills/` in the project, `~/.codex/skills/` globally |
-| Gemini CLI | `.agents/skills/` or `.gemini/skills/` |
+| Gemini CLI | `.agents/skills/`, `.gemini/skills/`, or `~/.gemini/skills/` |
 | Copilot | `AGENTS.md`; Skills support depends on surface |
 
 Pre-copied in the repo under `starter-kit/my-first-game/` - verify they exist.

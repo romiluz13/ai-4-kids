@@ -1,1 +1,1 @@
-Read AGENTS.md first.
+Read AGENTS.md first, then read ../../AGENTS.md for the full mentor rules.

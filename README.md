@@ -24,6 +24,12 @@
 מה כדאי שאבנה היום: משחק או אפליקציה?
 ```
 
+אם הסוכן לא מזהה Skills עדיין, הוא יכול להריץ:
+
+```bash
+bash scripts/install-mentor-skills.sh
+```
+
 בכיתה לא חייבים להתקין כלום. המורה יכול להציג את המצגת ולבנות חי על המסך.
 
 ## חומרי שיעור
@@ -53,6 +59,7 @@
 ```text
 ai-4-kids/
 ├── AGENTS.md
+├── scripts/install-mentor-skills.sh
 ├── skills/
 ├── starter-kit/my-first-game/
 │   ├── game.html
@@ -83,7 +90,7 @@ ai-4-kids/
 
 נבדק מול התיעוד העדכני: Cursor, Claude Code, Codex ו-Gemini CLI תומכים ב-Agent Skills במיקומים דומים. GitHub Copilot קורא `AGENTS.md`; תמיכת Skills תלויה במשטח שבו משתמשים.
 
-הכי פשוט: לפתוח את `starter-kit/my-first-game`. הוא כבר כולל Skills בשלושה נתיבים נפוצים.
+הכי פשוט: להריץ `bash scripts/install-mentor-skills.sh`, ואז לפתוח את `starter-kit/my-first-game`. הוא כבר כולל Skills בשלושה נתיבים נפוצים.
 
 ## קישורים חשובים
 

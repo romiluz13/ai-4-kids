@@ -24,7 +24,7 @@
 <div class="agent">
   <h2>Cursor</h2>
   <p>התקנה: <a href="https://cursor.com" target="_blank" rel="noopener">cursor.com</a></p>
-  <p><strong>Skills:</strong> <code>.cursor/skills/שם/SKILL.md</code> או <code>.agents/skills/שם/SKILL.md</code></p>
+  <p><strong>Skills:</strong> <code>.cursor/skills/שם/SKILL.md</code>, <code>.agents/skills/שם/SKILL.md</code>, או <code>~/.cursor/skills/שם/SKILL.md</code></p>
   <p><strong>פתיחה:</strong> File → Open Folder → <code>starter-kit/my-first-game</code></p>
   <p><strong>מצבים:</strong> Ask · Plan · Agent · Debug</p>
   <p><strong>הקשר:</strong> פשוט תארו מה לבנות - לא צריך לתייג קבצים</p>
@@ -33,7 +33,7 @@
 <div class="agent">
   <h2>Claude Code</h2>
   <p>התקנה: לפי הוראות Anthropic</p>
-  <p><strong>Skills:</strong> <code>.claude/skills/שם/SKILL.md</code></p>
+  <p><strong>Skills:</strong> <code>.claude/skills/שם/SKILL.md</code> או <code>~/.claude/skills/שם/SKILL.md</code></p>
   <p><strong>הוראות קבועות:</strong> <code>CLAUDE.md</code> בשורש הפרויקט</p>
   <p><strong>פתיחה:</strong> מתחילים מתוך תיקיית <code>my-first-game</code> בטרמינל</p>
   <p><strong>תכנון:</strong> Plan mode לפני בנייה</p>
@@ -56,7 +56,7 @@
 
 <div class="agent">
   <h2>Gemini CLI</h2>
-  <p><strong>Skills:</strong> <code>.agents/skills/שם/SKILL.md</code> או <code>.gemini/skills/שם/SKILL.md</code></p>
+  <p><strong>Skills:</strong> <code>.agents/skills/שם/SKILL.md</code>, <code>.gemini/skills/שם/SKILL.md</code>, או <code>~/.gemini/skills/שם/SKILL.md</code></p>
   <p><strong>הוראות:</strong> <code>GEMINI.md</code></p>
 </div>
 
@@ -72,8 +72,9 @@
   <p>1. שבטו את המאגר</p>
   <p>2. פתחו את <strong>שורש המאגר</strong> בסוכן</p>
   <p>3. כתבו:</p>
-  <pre>קרא את AGENTS.md והפעל skill setup-mentor
-התקן את כל ה-skills ופתח את my-first-game</pre>
+  <pre>קרא את AGENTS.md והפעל setup-mentor.
+אם צריך, הרץ bash scripts/install-mentor-skills.sh.
+פתח את starter-kit/my-first-game.</pre>
 </div>
 
 <script src="../assets/site-nav.js"></script>

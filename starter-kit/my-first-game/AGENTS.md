@@ -21,7 +21,13 @@ Skills may be in any of:
 - `.claude/skills/`
 - `.agents/skills/`
 
-Gemini may also read `GEMINI.md`, which points back here.
+Gemini may also read `GEMINI.md`, which points back here and to the repo root.
+
+If skills are missing, open the repo root and run:
+
+```bash
+bash scripts/install-mentor-skills.sh
+```
 
 Load `ai-build-buddy` when building. Load `kid-prompt-coach` when the prompt is vague.
 

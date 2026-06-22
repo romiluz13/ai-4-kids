@@ -23,14 +23,20 @@ Cursor, Claude Code, Codex ו-Gemini CLI תומכים בזה. Copilot קורא `
 קרא AGENTS.md והפעל setup-mentor
 ```
 
+אם הסוכן עדיין לא רואה Skills, הריצו:
+
+```bash
+bash scripts/install-mentor-skills.sh
+```
+
 ## נתיבים לפי כלי
 
 | כלי | תיקייה |
 |-----|--------|
-| Cursor | `.cursor/skills/` או `.agents/skills/` |
-| Claude Code | `.claude/skills/` |
+| Cursor | `.cursor/skills/`, `.agents/skills/`, או `~/.cursor/skills/` |
+| Claude Code | `.claude/skills/` או `~/.claude/skills/` |
 | Codex | `.agents/skills/` בפרויקט או `~/.codex/skills/` |
-| Gemini CLI | `.agents/skills/` או `.gemini/skills/` |
+| Gemini CLI | `.agents/skills/`, `.gemini/skills/`, או `~/.gemini/skills/` |
 | Copilot | `AGENTS.md` בתור הוראות קבועות |
 
 ב-`starter-kit/my-first-game` כבר מותקן בשלושת הנתיבים המרכזיים.
@@ -38,11 +44,7 @@ Cursor, Claude Code, Codex ו-Gemini CLI תומכים בזה. Copilot קורא `
 ## התקנה ידנית
 
 ```bash
-KIT=starter-kit/my-first-game
-for agent in .cursor .claude .agents; do
-  mkdir -p "$KIT/$agent/skills"
-  cp -r skills/*/ "$KIT/$agent/skills/"
-done
+bash scripts/install-mentor-skills.sh
 ```
 
 ## שימוש

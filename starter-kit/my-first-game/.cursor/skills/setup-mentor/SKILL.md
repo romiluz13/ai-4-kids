@@ -1,60 +1,58 @@
 ---
 name: setup-mentor
-description: >-
-  השתמש כשהמשתמש פתח את מאגר ai-4-kids ורוצה להתקין את המנטור, או שואל איך
-  מתחילים עם Cursor / Claude Code / Codex / Copilot / Gemini.
-compatibility: Cursor, Claude Code, Codex CLI, GitHub Copilot, Gemini CLI
+description: Use when setting up the ai-4-kids starter kit after cloning, installing mentor skills for Cursor, Claude Code, Codex, Gemini CLI, or Copilot/AGENTS.md, or verifying that a coding agent can mentor a Hebrew-speaking Israeli child.
 ---
 
-# Setup Mentor
+# Setup Mentor - התקנה שמוכיחה את עצמה
 
-מתקין את המנטור **פעם אחת**. אחרי זה הוא זמין בכל פרויקט עתידי. עברית פשוטה, צעד-צעד.
+אתה מסדר את הסביבה, לא רק מסביר. דבר בעברית פשוטה.
 
-## שלב 1 - התקנה גלובלית
+אם מולך ילד או ילדה: בקש עזרת הורה לפני התקנה גלובלית.
 
-העתק את ה-skills לתיקיות הגלובליות של הכלים שמותקנים במחשב.
+## הדרך הבטוחה
+
+1. מצא את שורש המאגר (`AGENTS.md` ו-`skills/` נמצאים שם).
+2. הרץ:
 
 ```bash
-for d in ~/.cursor/skills ~/.claude/skills ~/.codex/skills ~/.gemini/skills ~/.agents/skills; do
-  mkdir -p "$d"
-  cp -r skills/*/ "$d/"
-done
+bash scripts/install-mentor-skills.sh
 ```
 
-- `~/.cursor/skills/` → Cursor
-- `~/.claude/skills/` → Claude Code
-- `~/.codex/skills/` → Codex אישי
-- `~/.gemini/skills/` → Gemini CLI אישי
-- `~/.agents/skills/` → נתיב משותף להרבה סוכנים
+3. ודא שבסוף מופיע `Done`.
+4. פתח את `starter-kit/my-first-game` בסוכן הקוד.
+5. התחל ב-`kid-brainstorm`. בלי קוד עדיין.
 
-הסבר לילד: "התקנו את המנטור על המחשב. עכשיו בכל פרויקט חדש הוא כבר שם."
+## מה הסקריפט מתקין
 
-Copilot קורא בעיקר `AGENTS.md`. אם הוא לא מזהה Skills, עדיין עובדים עם אותן הוראות דרך `AGENTS.md`.
+הסקריפט מסנכרן את כל תיקיות ה-Skills:
 
-## שלב 2 - הפרויקט הראשון
+| מקום | למה |
+|------|-----|
+| `starter-kit/my-first-game/.cursor/skills/` | Cursor בפרויקט הראשון |
+| `starter-kit/my-first-game/.claude/skills/` | Claude Code בפרויקט הראשון |
+| `starter-kit/my-first-game/.agents/skills/` | Codex, Gemini, וכלים שתומכים בנתיב המשותף |
+| `~/.agents/skills/` | נתיב גלובלי משותף |
+| `~/.cursor/skills/` | Cursor גלובלי |
+| `~/.claude/skills/` | Claude Code גלובלי |
+| `~/.codex/skills/` | Codex גלובלי |
+| `~/.gemini/skills/` | Gemini CLI גלובלי |
 
-**Open Folder** על `starter-kit/my-first-game` (כבר מוכן עם הכול) ובנו שם.
+Copilot: אם אין תמיכת Skills במשטח שבו עובדים, השתמש ב-`AGENTS.md` כהוראות המנטור.
 
-לפרויקט חדש בעתיד: פותחים **תיקייה ריקה חדשה**. המנטור כבר זמין גלובלית.
+## בדיקת סיום
 
-## שלב 3 - בדיקה
+בדוק שלפחות אחד מאלה נכון:
 
-- Cursor: Settings → Rules → רואים את ה-skills
-- Claude Code: `/skills`
-- Codex: בקשו "אילו skills זמינים?"
-- Gemini CLI: בקשו "אילו skills זמינים?"
-- הסבר לילד את 5 הרמות: מגלה → בונה → חוקר → ארכיטקט → גיבור
+- הסוכן מציג את `setup-mentor`, `kid-brainstorm`, `kid-prompt-coach`, `kid-build-workflow`, `find-help`, `ai-build-buddy`.
+- או שהפרויקט הראשון מכיל את אותן תיקיות תחת `.cursor/skills`, `.claude/skills`, או `.agents/skills`.
+- או שהסוכן קרא את `AGENTS.md` ופועל לפי כללי המנטור.
 
-## שלב 4 - התחלה
+אם בדיקה נכשלת: אל תגיד "מותקן". הצג את הפלט, תקן נתיב אחד, והריץ שוב.
 
-הפעל `kid-brainstorm`: "מה היית רוצה לבנות היום, משחק או אפליקציה?" **בלי קוד עדיין.**
+## משפט פתיחה אחרי התקנה
 
-## חלופה - פרויקט בודד בלבד
-
-אם רוצים רק לפרויקט הזה (לא גלובלי): העתק `skills/*` ל-`.cursor/skills/`
-(או `.claude/skills/` · `.agents/skills/`) בתוך תיקיית הפרויקט.
-
-## הפניות
-
-- **מאפס לגיבור**: https://ai-4-kids.rom-88f.workers.dev/reference/mentor-levels.html
-- **המסע המלא**: https://ai-4-kids.rom-88f.workers.dev/reference/the-full-journey.html
+```
+שלום! אני המנטור שלך לבנייה עם AI.
+בנית פעם משהו עם AI? בכלל לא, קצת, או הרבה?
+מה היית רוצה לבנות היום - משחק או אפליקציה?
+```
